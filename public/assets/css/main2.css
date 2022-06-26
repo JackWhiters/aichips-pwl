@@ -1,0 +1,238 @@
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+        body {
+            background-color: #f7f7f7;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .navbar {
+            background-color: #f7f7f7;
+            border-bottom: none;
+        }
+        
+        .main-sidebar {
+            background-color: #fff;
+        }
+        
+        nav ul {
+            display: flex;
+            align-items: center;
+        }
+        
+        nav ul a {
+            color: #4a4a4a;
+            font-weight: 600;
+        }
+        
+        .navbar-nav .search {
+            background: #FFFFFF;
+            box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.05);
+            border-radius: 14px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 10px 12px;
+            border: none;
+        }
+        
+        .slider-img-logo {
+            width: 120px;
+            height: 50px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            margin: 24px 0;
+        }
+        
+        .sidebar {
+            background-color: #fff;
+            border: none;
+        }
+        
+        .sidebar nav {
+            background-color: #ffff;
+        }
+        
+        .sidebar .nav .nav-link {
+            box-sizing: border-box;
+            color: black;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 10px 15px;
+            margin: 5px -5px;
+            border: 2px solid transparent;
+            align-items: center;
+        }
+        
+        .sidebar .nav.active {
+            background-color: transparent;
+        }
+        
+        .nav .nav-link,
+        .nav-item a,
+        i,
+        p {
+            color: #000;
+        }
+        
+        .sidebar .nav .nav-link.active {
+            border: 2px solid #000000;
+            border-radius: 14px;
+        }
+        
+        .sidebar .nav .nav-link:hover {
+            color: #000;
+            border: 2px solid #000000;
+            border-radius: 14px;
+            background-color: transparent;
+        }
+        
+        .nav-link.active {
+            background-color: white;
+            background: white;
+        }
+        
+        .card {
+            border-radius: 14px;
+            padding: 20px 10px;
+            border: none;
+            box-shadow: none;
+        }
+        
+        .content-header h1 {
+            font-weight: 700;
+        }
+        
+        .container-fluid {
+            border: none;
+        }
+        
+        .btn.tambah {
+            position: absolute;
+            top: 30px;
+            right: 20px;
+            margin-bottom: 10px;
+            background-color: #68bb7f;
+            padding: 6px 14px;
+            color: black;
+            border-radius: 8px;
+            text-decoration: none;
+            display: flex;
+            font-weight: 500;
+            align-items: center;
+        }
+        
+        .btn.tambah:hover {
+            background-color: #4DAB68;
+        }
+        /* PELANGGAN */
+        
+        .table thead th {
+            padding-bottom: 16px;
+        }
+        
+        .table tbody td {
+            padding-bottom: 16px;
+        }
+        /* End of Pelanggan */
+        /* MENU */
+        
+        .btn-add-product {
+            background-color: #4DAB68;
+            padding: 6px 14px;
+            color: black;
+            border-radius: 8px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .btn-add-product i {
+            margin-right: 5px;
+        }
+        
+        .card.products {
+            border-radius: 12px;
+            padding: 0;
+        }
+        
+        .card.products .card-head {
+            background-color: #eeee;
+            border-radius: 12px;
+        }
+        
+        .card.products .card-head .product-img {
+            border-radius: 12px 12px 0 0;
+        }
+        
+        .card.products .card-body {
+            padding: 20px;
+        }
+        
+        .card.products .card-body .product-name {
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+        
+        .card.products .card-body .product-price {
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+        
+        .card.products .card-body .product-price span {
+            font-size: 10px;
+        }
+        
+        .card.products .product-name-price {
+            padding-top: 20px;
+            padding-bottom: 10px;
+        }
+        
+        .btn-group-ed .btn-secondary {
+            margin-left: 12px;
+            background-color: transparent;
+            border-radius: 7px;
+            text-decoration: none;
+            color: #000000;
+            border: 1px solid black;
+            padding: 6px 10px;
+        }
+        
+        .btn-secondary.yellow {
+            border: 1px solid #E1B74A;
+        }
+        
+        .btn-secondary.yellow:hover {
+            background-color: rgb(226, 183, 75, 0.5);
+        }
+        
+        .btn-secondary.red {
+            border: 1px solid #DC6262;
+        }
+        
+        .btn-secondary.red:hover {
+            background-color: rgb(220, 98, 98, 0.5);
+        }
+        
+        .btn-group-ed {
+            display: flex;
+            justify-content: end;
+        }
+        /* ANTRIAN */
+        
+        .main-footer {
+            background-color: #f7f7f7;
+            border-top: none;
+        }
+        
+        .card .card-body h4 {
+            font-weight: 600;
+        }
+        
+        @media(max-width: 768px) {
+            .btn.tambah {
+                float: right;
+            }
+        }
