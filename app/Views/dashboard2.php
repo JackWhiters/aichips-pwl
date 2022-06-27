@@ -29,177 +29,110 @@
 </head>
 
 <body>
-    <div class="container-scroller">
-        <!-- partial:../../partials/_navbar.html -->
-        <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
-            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start pl-3">
-
-                <div>
-                    <a class="navbar-brand brand-logo" href="../../index.html">
-                        <h1>AiChips</h1>
-                    </a>
-                    <a class="navbar-brand brand-logo-mini" href="../../index.html">
-                        <h1>A</h1>
-                    </a>
-                </div>
-            </div>
-            <div class="navbar-menu-wrapper d-flex align-items-top">
-                <ul class="navbar-nav">
-                    <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-                        <h1 class="welcome-text">Welcome, <span class="text-black fw-bold">:)</span></h1>
-                        <p>Pilih menu favorit kalian dengan bijak yaa.. </p>
-                    </li>
-                </ul>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-flex align-items-top flex-row">
+            <div class="container-fluid">
+                <a class="navbar-brand " href="<?php echo base_url().'customer/index'?>"><img src="<?= base_url('uploads/profile/aichips_logos.png') ?>" alt="" class="navbar-img-logo">
+                </a>
+        
+           <div class="d-flex align-items-top">
                 <ul class="navbar-nav ms-auto">
+
                     <li class="nav-item">
-                        <button type="button" class="btn btn-social-icon-text btn-warning" onclick="bukaModalKeranjang()"><i class="fa-solid fa-bag-shopping"></i>Keranjang <b id="jmlPesanan">(0)</b></button>
+                         <button type="button" class="btn btn-social-icon-text btn-warning desktop" onclick="bukaModalKeranjang()"><i class="fa-solid fa-bag-shopping"></i>Keranjang<b id="jmlPesanan">(0)</b></button>
                     </li>
                     <li class="nav-item">
-                        <button type="button" class="btn btn-social-icon-text btn-google" onclick="bukaModalLogin()"><i class="mdi mdi-account-check"></i>Pegawai</button>
+                         <button type="button" class="btn btn-social-icon-text btn-google desktop" onclick="bukaModalLogin()"><i class="mdi mdi-account-check"></i>Pegawai</button>
                     </li>
                 </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
         <!-- partial -->
-        <div class="container-fluid">
+        <div class="container">
             <!-- partial -->
-            <div class="col">
-                <?php if ($makanan) : ?>
-                    <div class="content-wrapper text-center">
-                        <h2>Aneka Makanan</h2>
-                        <hr>
-                        <div class="row g-2 product-menu">
-                            <?php for ($i = 0; $i < count($makanan); $i++) :
-                                if ($makanan[$i]["jenis"] == 1) : ?>
-                                    <div class="col-6 col-md-4 col-lg-2">
-                                        <div class="card card-primary text-center">
-                                        <div class="card-head">
-                                        <img src="<?= base_url() ?>/images/menu/<?= $makanan[$i]["foto"] ?>" class="product-img img-fluid" <?php if ($makanan[$i]["status"] == 0) {
-                                                                                                                                                        echo 'style = "filter: grayscale(100%);-webkit-filter: grayscale(100%);"';
-                                                                                                                                                    } ?> alt="...">
-                                        
-                                                
-                                                <div class="card-body text-center">
-                                                    <h5 class="product-name"><?= $makanan[$i]["nama_item"] ?></h5>
-                                                    <i>Rp. <?= $makanan[$i]["harga"] ?></i><br>
-                                                    <button class="btn-add mt-2" <?php if ($makanan[$i]["status"] == 0) {
-                                                                                                            echo "disabled";
-                                                                                                        } ?> onclick='tambahPesanan(<?= $makanan[$i]["id"] ?>, "<?= $makanan[$i]["nama_item"] ?>", <?= $makanan[$i]["harga"] ?> )'><?php if ($makanan[$i]["status"] == 0) {
-                                                                                                                                                                                                                                    echo "Habis";
-                                                                                                                                                                                                                                } else {
-                                                                                                                                                                                                                                    echo "Tambah";
-                                                                                                                                                                                                                                } ?></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                            <?php
-                                endif;
-                            endfor; ?>
-                        </div>
-                    </div>
-                <?php
-                endif;
-                if ($snack) : ?>
-                    <div class="content-wrapper text-center">
-                        <h2>Aneka Snack</h2>
-                        <hr>
-                        <div class="row g-2 product-menu">
-                            <?php for ($i = 0; $i < count($snack); $i++) :
-                                if ($snack[$i]["jenis"] == 2) : ?>
-                                    <div class="col-6 col-md-4 col-lg-2">
-                                        <div class="card card-primary text-center">
-                                        <div class="card-head">
-                                        <img src="<?= base_url() ?>/images/menu/<?= $snack [$i]["foto"] ?>" class="product-img img-fluid" <?php if ($snack[$i]["status"] == 0) {
-                                                                                                                                                    echo 'style = "filter: grayscale(100%);-webkit-filter: grayscale(100%);"';
-                                                                                                                                                } ?> alt="...">
-                                                <div class="card-body text-center">
-                                                    <h5 class="product-name"><?= $snack[$i]["nama_item"] ?></h5>
-                                                    <i>Rp. <?= $snack[$i]["harga"] ?></i><br>
-                                                    <button class="btn-add mt-2" <?php if ($snack[$i]["status"] == 0) {
-                                                                                                            echo "disabled";
-                                                                                                        } ?> onclick='tambahPesanan(<?= $snack[$i]["id"] ?>, "<?= $snack[$i]["nama_item"] ?>", <?= $snack[$i]["harga"] ?> )'><?php if ($snack[$i]["status"] == 0) {
-                                                                                                                                                                                                                            echo "Habis";
-                                                                                                                                                                                                                        } else {
-                                                                                                                                                                                                                            echo "Tambah";
-                                                                                                                                                                                                                        } ?></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                            <?php
-                                endif;
-                            endfor; ?>
-                        </div>
-                    </div>
-                <?php endif;
-                if ($minumanDingin) : ?>
-                    <div class="content-wrapper text-center">
-                        <h2>Aneka Minuman Dingin</h2>
-                        <hr>
-                        <div class="row">
-                            <?php for ($i = 0; $i < count($minumanDingin); $i++) :
-                                if ($minumanDingin[$i]["jenis"] == 3) : ?>
-                                    <<div class="col-6 col-md-4 col-lg-2">
-                                        <div class="card card-primary text-center">
+            <div class="heroes text-center">
+                <h1 class="title-heroes">
+                    Makan Enak, Makan Kenyang
+                </h1>
+                <p>Penuhi Kebutuhan perut anda hanya disini!</p>
+            </div>
+
+
+            <?php if ($snack) : ?>
+                <div class="content-wrapper text-center">
+                       
+                        <div class="row g-3 product-menu">
+                            <?php foreach ($snack as $snack) :
+                                if ($snack["jenis"] == 2) : ?>
+                                    <div class="col-6 col-md-4 col-lg-3 product">
+                                        <div class="card mt-4 text-center mb-4">
                                             <div class="card-head">
-                                            <img src="<?= base_url() ?>/images/menu/<?= $minumanDingin [$i]["foto"] ?>" class="product-img img-fluid"  <?php if ($minumanDingin[$i]["status"] == 0) {
-                                                                                                                                                            echo 'style = "filter: grayscale(100%);-webkit-filter: grayscale(100%);"';
-                                                                                                                                                        } ?> alt="...">
-                                                <div class="card-body text-center">
-                                                    <h5 class="product-name"><?= $minumanDingin[$i]["nama_item"] ?></h5>
-                                                    <i>Rp. <?= $minumanDingin[$i]["harga"] ?></i><br>
-                                                    <button class="btn-add mt-2" <?php if ($minumanDingin[$i]["status"] == 0) {
-                                                                                                            echo "disabled";
-                                                                                                        } ?> onclick='tambahPesanan(<?= $minumanDingin[$i]["id"] ?>, "<?= $minumanDingin[$i]["nama_item"] ?>", <?= $minumanDingin[$i]["harga"] ?> )'><?php if ($minumanDingin[$i]["status"] == 0) {
-                                                                                                                                                                                                                                                    echo "Habis";
-                                                                                                                                                                                                                                                } else {
-                                                                                                                                                                                                                                                    echo "Tambah";
-                                                                                                                                                                                                                                                } ?></button>
-                                                                                                                                                                                                                                                </div>
+                                                <img src="<?= base_url() ?>/images/menu/<?= $snack ["foto"] ?>" class="product-img img-fluid rounded-circle" <?php if ($snack["status"] == 0) {
+                                                    echo 'style = "filter: grayscale(100%);-webkit-filter: grayscale(100%);"';  
+                                                } ?> alt="...">
+                                            </div>
+                                           
+                                            <div class="card-body text-center">
+                                            <h5 class="product-name "><?= $snack["nama_item"] ?></h5>
+                                            <hr>
+                                                <div class="card-foot">
+                                                    <h5 class="price"><span>Rp. </span><?= $snack ["harga"]?></h5>
+                                                    <button class="btn-add mt-2" <?php if ($snack ["status"] == 0) {
+                                                        echo "disabled";
+                                                        } ?> onclick='tambahPesanan(<?= $snack ["id"] ?>, "<?= $snack ["nama_item"] ?>", <?= $snack ["harga"] ?> )'><?php if ($snack ["status"] == 0) {
+                                                            echo "Habis";
+                                                        } else {
+                                                            echo "<i class='fa-solid fa-plus'></i>";
+                                                        } ?>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                             <?php
                                 endif;
-                            endfor; ?>
+                            endforeach; ?>
                         </div>
                     </div>
                 <?php endif;
-                if ($minumanPanas) : ?>
-                    <div class="content-wrapper text-center">
-                        <h2>Aneka Minuman Panas</h2>
-                        <hr>
-                        <div class="row">
-                            <?php for ($i = 0; $i < count($minumanPanas); $i++) :
-                                if ($minumanPanas[$i]["jenis"] == 4) : ?>
-                                    <div class="col-lg-3 grid-margin stretch-card">
-                                        <div class="card" style="width: 18rem;">
-                                            <div class="card-body p-0">
-                                                <img src="<?= base_url() ?>/images/menu/<?= $minumanPanas[$i]["foto"] ?>" class="card-img-top" <?php if ($minumanPanas[$i]["status"] == 0) {
-                                                                                                                                                            echo 'style = "filter: grayscale(100%);-webkit-filter: grayscale(100%);"';
-                                                                                                                                                        } ?> alt="...">
-                                                <div class="card-body text-center">
-                                                    <h5 class="product-name"><?= $minumanPanas[$i]["nama_item"] ?></h5>
-                                                    <i>Rp. <?= $minumanPanas[$i]["harga"] ?></i><br>
-                                                    <button class="btn-add mt-2" <?php if ($minumanPanas[$i]["status"] == 0) {
-                                                                                                            echo "disabled";
-                                                                                                        } ?> onclick='tambahPesanan(<?= $minumanPanas[$i]["id"] ?>, "<?= $minumanPanas[$i]["nama_item"] ?>", <?= $minumanPanas[$i]["harga"] ?> )'><?php if ($minumanPanas[$i]["status"] == 0) {
-                                                                                                                                                                                                                                                    echo "Habis";
-                                                                                                                                                                                                                                                } else {
-                                                                                                                                                                                                                                                    echo "Tambah";
-                                                                                                                                                                                                                                                } ?></button>
+
+                 if ($makanan) : ?>
+                <div class="content-wrapper text-center">
+                     
+                        <div class="row g-3 product-menu">
+                            <?php foreach ($makanan as $makanan) :
+                                if ($makanan["jenis"] == 1) : ?>
+                                    <div class="col-6 mt-4 col-md-4 col-lg-3 product">
+                                        <div class="card mt-4 text-center mb-4">
+                                            <div class="card-head">
+                                                <img src="<?= base_url() ?>/images/menu/<?= $makanan ["foto"] ?>" class="product-img img-fluid rounded-circle" <?php if ($makanan["status"] == 0) {
+                                                    echo 'style = "filter: grayscale(100%);-webkit-filter: grayscale(100%);"';  
+                                                } ?> alt="...">
+                                            </div>
+                                           
+                                            <div class="card-body text-center">
+                                            <h5 class="product-name "><?= $makanan["nama_item"] ?></h5>
+                                            <hr>
+                                                <div class="card-foot">
+                                                    <h5 class="price"><span>Rp. </span><?= $makanan ["harga"]?></h5>
+                                                    <button class="btn-add mt-2" <?php if ($makanan ["status"] == 0) {
+                                                        echo "disabled";
+                                                        } ?> onclick='tambahPesanan(<?= $makanan ["id"] ?>, "<?= $makanan ["nama_item"] ?>", <?= $makanan ["harga"] ?> )'><?php if ($makanan ["status"] == 0) {
+                                                            echo "Habis";
+                                                        } else {
+                                                            echo "<i class='fa-solid fa-plus'></i>";
+                                                        } ?>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                             <?php
                                 endif;
-                            endfor; ?>
+                            endforeach; ?>
                         </div>
                     </div>
-                <?php endif; ?>
+                <?php endif;?>
 
                 <!-- Modal -->
                 <div class="modal fade" id="modalKeranjang" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -290,7 +223,7 @@
                                     <div class="input-group">
                                           <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text bg-warning text-white">Username</span>
+                                            <span class="input-group-text bg-danger text-white">Username</span>
                                         </div>
                                         <input type="text" id="username" name='username' class="form-control" aria-label="Amount (to the nearest dollar)">
                                     </div>
@@ -299,7 +232,7 @@
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text bg-warning text-white">Password</span>
+                                            <span class="input-group-text bg-danger text-white">Password</span>
                                         </div>
                                         <input type="password" id="password" name='password' class="form-control" aria-label="Amount (to the nearest dollar)">
                                     </div>
@@ -307,7 +240,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" onclick="tutupModalLogin()">Batal</button>
-                                <button type="submit" class="btn btn-warning" onclick="login()" id="login">Log in</button>
+                                <button type="submit" class="btn btn-danger" onclick="login()" id="login">Log in</button>
                             </div>
                         </div>
                     </div>
@@ -316,21 +249,22 @@
             </div>
             <!-- page-body-wrapper ends -->
         </div>
-
-        <!-- Footer -->
+                        
+.
+        <!-- Footer --> 
         <footer class="text-center">
-        <h3 class="footer-title">Lorem Ipsum</h3>
-        <p class="footer-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum incidunt placeat amet doloremque, distinctio eaque?
-        </p>
-        <div class="btn-group-footer">
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-        </div>
-        <hr>
-        <p class="copyright">Copyright ©2022 KelompokXX</p>
-    </footer>
+                <h3 class="footer-title">Lorem Ipsum</h3>
+                <p class="footer-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum incidunt placeat amet doloremque, distinctio eaque?
+                </p>
+                <div class="btn-group-footer">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+                <hr>
+                <p class="copyright">Copyright © 2021 - 2022 AiChips. All rights reserved.</p>
+        </footer>
 
         <script src="<?php echo base_url() ?>   /js/jquery/jquery.min.js"></script>
         
