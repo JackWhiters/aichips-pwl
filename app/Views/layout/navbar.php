@@ -34,7 +34,7 @@
         <li class="nav-item">
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="<?= base_url('uploads/profile/' . esc(get_user('avatar'))) ?>" class="img-circle elevation-2 avatar">
+                <img src="<?= base_url('uploads/profile/' . esc(get_user('avatar'))) ?>" class="img-circle avatar">
             </div>
             <div class="info">
                 <a href="javascript:void(0)" class="d-block"><?= esc(get_user('nama')); ?></a>

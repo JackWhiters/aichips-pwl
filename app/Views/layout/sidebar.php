@@ -1,9 +1,8 @@
 <aside class="main-sidebar">
     <!-- Brand Logo -->
-    <a href="javascript:void(0)" class="brand-link">
-
-        <i class="fas fa-shopping-cart fa-2x text-info"></i>
-        <span class="brand-text font-weight-light"><?= get_pengaturan('nama_toko'); ?></span>
+    <a href="javascript:void(0)" class="brand-link text-center">
+    <img src="<?= base_url('uploads/profile/aichips_logos.png') ?>" alt="" class="sidebar-img-logo">
+        
     </a>
 
     <!-- Sidebar -->
@@ -11,7 +10,7 @@
         <!-- Sidebar user panel (optional) -->
 
         <!-- Sidebar Menu -->
-        <nav class="mt-4">
+        <nav class="mt-10">
             <ul class="nav nav-pills nav-sidebar flex-column text-sm " data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
                     <a href="<?= base_url('dashboard') ?>" class="nav-link">

@@ -1,53 +1,60 @@
 <?=$this->extend('layout/template');?>
 <?=$this->section('content');?>
-<div class="row">
-    <div class="col-lg-6 grid-margin">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Data Pelanggan</h4><br>
-                <p class="card-description"> Meja yang memiliki pesanan belum dihidangkan.
-                </p>
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>No.Pesanan</th>
-                                <th>Meja</th>
-                                <th>Nama</th>
-                                <th>Status</th>
-                                <th>Ubah</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tabelAntrian">
-                        </tbody>
-                    </table>
+<div class="container">
+
+
+<div class="row"  id="daftar-antrian">
+
+</div>
+    <div class="row">
+        <div class="col-lg-12 grid-margin">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Data Pelanggan</h4><br>
+                    <p class="card-description"> Meja yang memiliki pesanan belum dihidangkan.
+                    </p>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>No.Pesanan</th>
+                                    <th>Meja</th>
+                                    <th>Nama</th>
+                                    <th>Status</th>
+                                    <th>Rincian</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabelAntrian">
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-lg-6 grid-margin stretch-card">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title ">Data Pelanggan Selesai</h4><br>
-                <p class="card-description">Pesanan pelanggan yang sudah dihidangkan hari ini.
-                </p>
-                <div class="table-responsive">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>No.Pesanan</th>
-                                <th>Meja</th>
-                                <th>Nama</th>
-                                <th>Status</th>
-                                <th>Rincian</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tabelAntrianSelesai">
-                        </tbody>
-                    </table>
+        <!-- <div class="col-lg-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title ">Data Pelanggan Selesai</h4><br>
+                    <p class="card-description">Pesanan pelanggan yang sudah dihidangkan hari ini.
+                    </p>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>No.Pesanan</th>
+                                    <th>Meja</th>
+                                    <th>Nama</th>
+                                    <th>Status</th>
+                                    <th>Rincian</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabelAntrianSelesai">
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 <!-- Modal -->
@@ -143,14 +150,16 @@
             success: function(data) {
                 if (data.length) {
                     for (let i = 0; i < data.length; i++) {
+                       
+                        $('#daftar-antrian').append('<div class="col-6 col-md-8 col-lg-4"><div class="card antrian mb-3"><div class="card-body"><div name="product-name-price"><span class="order-num mb-2"> Order#'+ data[i].id +'</span><h4 class="table-num float-sm-right">'+ data[i].noMeja +'</h4><h4 class="product-name mb-2">'+ data[i].nama +'</h4></div><label class="badge badge-danger mt-2">'+ data[i].status +'</label><div class="btn-group-ed"><button href="#" class="btn-secondary yellow" onClick="modalRincian(' + data[i].id + ', \"' + data[i].nama + '\" ,\"' + data[i].noMeja + '\"' + data[i].status + ')">Lihat Rincian <i class="mdi mdi-food-fork-drink"></i></button></div></div></div> </div>')
+
                         isiPesanan += "<tr><td>" + data[i].id + "</td><td>" + data[i].noMeja + "</td><td>" + data[i].nama + "</td><td>"
 
-                        if (data[i].status == 0) {
+                         if (data[i].status == 0) {
                             isiPesanan += "<label class='badge badge-danger'>Belum Bayar"
                         } else {
-                            isiPesanan += "<label class='badge badge-success'>Memasak"
+                            isiPesanan += "<label class='badge badge-success'>Selesai"
                         }
-
                         isiPesanan += "</label></td><td><button href='#' class='btn btn-inverse-warning btn-sm' onClick='modalRincian(" + data[i].id + ", \"" + data[i].nama + "\", " + data[i].noMeja + "," + data[i].status + ")'><i class='mdi mdi-format-list-bulleted-type'></i><i class='mdi mdi-food-fork-drink'></i></button></td></tr>"
                     }
                 } else {

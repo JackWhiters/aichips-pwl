@@ -20,12 +20,6 @@ body {
     padding: 20px;
 }
 
-.navbar-cart {
-    position: absolute;
-    right: 75px;
-    top: 8px;
-}
-
 
 /*  End of Navbar */
 
@@ -36,6 +30,7 @@ body {
     margin: 0;
     border-radius: 12px;
     padding: 0;
+    background-color: #fff;
 }
 
 .card-head {
@@ -65,6 +60,7 @@ body {
     color: black;
     font-weight: 700;
     font-size: 14px;
+    border: none;
 }
 
 .card-body .btn-add:hover {

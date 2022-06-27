@@ -77,12 +77,12 @@
                                         <img src="<?= base_url() ?>/images/menu/<?= $makanan[$i]["foto"] ?>" class="product-img img-fluid" <?php if ($makanan[$i]["status"] == 0) {
                                                                                                                                                         echo 'style = "filter: grayscale(100%);-webkit-filter: grayscale(100%);"';
                                                                                                                                                     } ?> alt="...">
-                                        </div>
+                                        
                                                 
                                                 <div class="card-body text-center">
                                                     <h5 class="product-name"><?= $makanan[$i]["nama_item"] ?></h5>
                                                     <i>Rp. <?= $makanan[$i]["harga"] ?></i><br>
-                                                    <button class="btn btn-warning btn-sm btn-fw mt-2" <?php if ($makanan[$i]["status"] == 0) {
+                                                    <button class="btn-add mt-2" <?php if ($makanan[$i]["status"] == 0) {
                                                                                                             echo "disabled";
                                                                                                         } ?> onclick='tambahPesanan(<?= $makanan[$i]["id"] ?>, "<?= $makanan[$i]["nama_item"] ?>", <?= $makanan[$i]["harga"] ?> )'><?php if ($makanan[$i]["status"] == 0) {
                                                                                                                                                                                                                                     echo "Habis";
@@ -116,7 +116,7 @@
                                                 <div class="card-body text-center">
                                                     <h5 class="product-name"><?= $snack[$i]["nama_item"] ?></h5>
                                                     <i>Rp. <?= $snack[$i]["harga"] ?></i><br>
-                                                    <button class="btn btn-warning btn-sm btn-fw mt-2" <?php if ($snack[$i]["status"] == 0) {
+                                                    <button class="btn-add mt-2" <?php if ($snack[$i]["status"] == 0) {
                                                                                                             echo "disabled";
                                                                                                         } ?> onclick='tambahPesanan(<?= $snack[$i]["id"] ?>, "<?= $snack[$i]["nama_item"] ?>", <?= $snack[$i]["harga"] ?> )'><?php if ($snack[$i]["status"] == 0) {
                                                                                                                                                                                                                             echo "Habis";
@@ -140,22 +140,23 @@
                         <div class="row">
                             <?php for ($i = 0; $i < count($minumanDingin); $i++) :
                                 if ($minumanDingin[$i]["jenis"] == 3) : ?>
-                                    <div class="col-lg-3 grid-margin stretch-card">
-                                        <div class="card" style="width: 18rem;">
-                                            <div class="card-body p-0">
-                                                <img src="<?= base_url() ?>/images/menu/<?= $minumanDingin[$i]["foto"] ?>" class="card-img-top" <?php if ($minumanDingin[$i]["status"] == 0) {
+                                    <<div class="col-6 col-md-4 col-lg-2">
+                                        <div class="card card-primary text-center">
+                                            <div class="card-head">
+                                            <img src="<?= base_url() ?>/images/menu/<?= $minumanDingin [$i]["foto"] ?>" class="product-img img-fluid"  <?php if ($minumanDingin[$i]["status"] == 0) {
                                                                                                                                                             echo 'style = "filter: grayscale(100%);-webkit-filter: grayscale(100%);"';
                                                                                                                                                         } ?> alt="...">
                                                 <div class="card-body text-center">
                                                     <h5 class="product-name"><?= $minumanDingin[$i]["nama_item"] ?></h5>
                                                     <i>Rp. <?= $minumanDingin[$i]["harga"] ?></i><br>
-                                                    <button class="btn btn-warning btn-sm btn-fw mt-2" <?php if ($minumanDingin[$i]["status"] == 0) {
+                                                    <button class="btn-add mt-2" <?php if ($minumanDingin[$i]["status"] == 0) {
                                                                                                             echo "disabled";
                                                                                                         } ?> onclick='tambahPesanan(<?= $minumanDingin[$i]["id"] ?>, "<?= $minumanDingin[$i]["nama_item"] ?>", <?= $minumanDingin[$i]["harga"] ?> )'><?php if ($minumanDingin[$i]["status"] == 0) {
                                                                                                                                                                                                                                                     echo "Habis";
                                                                                                                                                                                                                                                 } else {
                                                                                                                                                                                                                                                     echo "Tambah";
                                                                                                                                                                                                                                                 } ?></button>
+                                                                                                                                                                                                                                                </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -182,7 +183,7 @@
                                                 <div class="card-body text-center">
                                                     <h5 class="product-name"><?= $minumanPanas[$i]["nama_item"] ?></h5>
                                                     <i>Rp. <?= $minumanPanas[$i]["harga"] ?></i><br>
-                                                    <button class="btn btn-warning btn-sm btn-fw mt-2" <?php if ($minumanPanas[$i]["status"] == 0) {
+                                                    <button class="btn-add mt-2" <?php if ($minumanPanas[$i]["status"] == 0) {
                                                                                                             echo "disabled";
                                                                                                         } ?> onclick='tambahPesanan(<?= $minumanPanas[$i]["id"] ?>, "<?= $minumanPanas[$i]["nama_item"] ?>", <?= $minumanPanas[$i]["harga"] ?> )'><?php if ($minumanPanas[$i]["status"] == 0) {
                                                                                                                                                                                                                                                     echo "Habis";
@@ -332,6 +333,7 @@
     </footer>
 
         <script src="<?php echo base_url() ?>   /js/jquery/jquery.min.js"></script>
+        
         <script>
             var pesanan = [];
             var ditemukan = false

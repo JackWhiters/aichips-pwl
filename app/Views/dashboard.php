@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-lg-3 col-6">
             <!-- small card -->
-            <div class="small-box bg-gradient-blue">
+            <div class="small-box bg-minnesota">
                 <div class="inner">
                     <h3><?=esc($produk)?></h3>
                     <p>Item Produk</p>
@@ -22,7 +22,7 @@
         </div>
         <div class="col-lg-3 col-6">
             <!-- small card -->
-            <div class="small-box bg-gradient-maroon">
+            <div class="small-box bg-amethyst">
                 <div class="inner">
                     <h3><?=esc($pelanggan)?></h3>
                     <p>Pelanggan</p>
@@ -38,7 +38,7 @@
         <!-- ./col -->
         <div class="col-lg-3 col-6">
             <!-- small card -->
-            <div class="small-box bg-gradient-purple">
+            <div class="small-box bg-miaka">
                 <div class="inner">
                     <h3><?=esc($pengguna)?></h3>
                     <p>Pengguna</p>

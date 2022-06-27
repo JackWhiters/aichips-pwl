@@ -6,7 +6,7 @@
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered table-striped" id="tabel-user" width="100%">
+                <table class="table table-borderless" id="tabel-user" width="100%">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -132,7 +132,7 @@
                 {
                     data: 'alamat'
                 },
-                {
+                {    
                     data: 'keterangan'
                 },
                 {
