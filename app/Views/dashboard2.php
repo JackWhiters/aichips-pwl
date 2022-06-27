@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="<?= base_url('/vendors/typicons/typicons.css') ?>">
     <link rel="stylesheet" href="<?= base_url('/vendors/simple-line-icons/css/simple-line-icons.css') ?>">
     <link rel="stylesheet" href="<?= base_url('/vendors/css/vendor.bundle.base.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('/plugins/sweetalert2/sweetalert2.min.css') ?>">
+
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <!-- End plugin css for this page -->
@@ -77,7 +79,7 @@
                                             <hr>
                                                 <div class="card-foot">
                                                     <h5 class="price"><span>Rp. </span><?= $snack ["harga"]?></h5>
-                                                    <button class="btn-add mt-2" <?php if ($snack ["status"] == 0) {
+                                                    <button type="button" id="masukKeranjang" class="btn-add mt-2" <?php if ($snack ["status"] == 0) {
                                                         echo "disabled";
                                                         } ?> onclick='tambahPesanan(<?= $snack ["id"] ?>, "<?= $snack ["nama_item"] ?>", <?= $snack ["harga"] ?> )'><?php if ($snack ["status"] == 0) {
                                                             echo "Habis";
@@ -115,9 +117,9 @@
                                             <hr>
                                                 <div class="card-foot">
                                                     <h5 class="price"><span>Rp. </span><?= $makanan ["harga"]?></h5>
-                                                    <button class="btn-add mt-2" <?php if ($makanan ["status"] == 0) {
+                                                    <button  type="button" id="masukKeranjang" class="btn-add mt-2" <?php if ($makanan ["status"] == 0) {
                                                         echo "disabled";
-                                                        } ?> onclick='tambahPesanan(<?= $makanan ["id"] ?>, "<?= $makanan ["nama_item"] ?>", <?= $makanan ["harga"] ?> )'><?php if ($makanan ["status"] == 0) {
+                                                        } ?>onclick='tambahPesanan(<?= $makanan ["id"] ?>, "<?= $makanan ["nama_item"] ?>", <?= $makanan ["harga"] ?> )'><?php if ($makanan ["status"] == 0) {
                                                             echo "Habis";
                                                         } else {
                                                             echo "<i class='fa-solid fa-plus'></i>";
@@ -263,16 +265,18 @@
                     <a href="#"><i class="fa-brands fa-twitter"></i></a>
                 </div>
                 <hr>
-                <p class="copyright">Copyright © 2021 - 2022 AiChips. All rights reserved.</p>
+                <p class="copyright"><strong>Copyright © 2021 - 2022 AiChips. All rights reserved.</strong> </p>
         </footer>
 
         <script src="<?php echo base_url() ?>   /js/jquery/jquery.min.js"></script>
+
         
         <script>
             var pesanan = [];
             var ditemukan = false
             var jmlPesanan = 0
 
+            
             function bukaModalKeranjang() {
                 tampilkanPesanan()
                 $("#modalKeranjang").modal("show")
@@ -354,7 +358,18 @@
                 $("#modalLogin").modal("hide")
             }
 
+            
+        
+            
+       
             function tambahPesanan(id, nama, harga) {
+
+                Swal.fire(
+                    'Ditambahkan ke keranjang!',
+                    'Silahkan pilih makanan lain dan buka keranjang untuk melanjutkan pemesanan',
+                    'success'
+                    )
+
                 ditemukan = false
                 jmlPesanan = 0
                 for (let i = 0; i < pesanan.length; i++) {
@@ -418,6 +433,8 @@
         <script src="<?= base_url('/js/template.js') ?>"></script>
         <script src="<?= base_url('/js/settings.js') ?>"></script>
         <script src="<?= base_url('/js/todolist.js') ?>"></script>
+        <script src="<?= base_url('/plugins/sweetalert2/sweetalert2.min.js') ?>"></script>
+
         <!-- endinject -->
 </body>
 

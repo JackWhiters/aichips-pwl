@@ -25,12 +25,13 @@
     <link rel="stylesheet" href="<?= base_url() ?>/vendors/typicons/typicons.css">
     <link rel="stylesheet" href="<?= base_url() ?>/vendors/simple-line-icons/css/simple-line-icons.css">
 
-    <link rel="stylesheet" href="<?= base_url() ?>\assets\css\main2.css">
+    
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
-
+    <link rel="stylesheet" href="<?= base_url() ?>\assets\css\main2.css">
+    <link rel="stylesheet" href="<?= base_url() ?>\assets\fontawesome\css\all.min.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="<?= base_url() ?>/images/favicon.png" />
 
