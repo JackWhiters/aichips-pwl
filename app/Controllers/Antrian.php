@@ -21,7 +21,17 @@ class Antrian extends BaseController
 
     public function dataAntrian()
     {
+        // $idAntian = $this->request->getPost("idAntrian");
+
+        // $pesanan = $this->transaksiModel->where("idAntrian", $idAntian)->findAll();
+        // for ($i = 0; $i < count($pesanan); $i++) {
+        //     $menu = $this->menuModel->where("id", $pesanan[$i]["idMenu"])->first();
+        //     $pesanan[$i]["nama"] = $menu["nama_item"];
+        //     $pesanan[$i]["harga"] = $menu["harga"];
+        // }
+        // echo json_encode($pesanan);
         echo json_encode($this->antrianModel->where("status !=", 2)->findAll());
+
     }
 
     public function dataAntrianSelesai()

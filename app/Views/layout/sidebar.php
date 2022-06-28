@@ -35,7 +35,7 @@
                     <li class="nav-item">
                         <a href="<?= base_url('menu') ?>" class="nav-link">
                         <i class="fa-solid fa-utensils"></i>
-                            <p>Menu</p>
+                            <p>Produk</p>
                         </a>
                     </li>
                 <?php endif ?>

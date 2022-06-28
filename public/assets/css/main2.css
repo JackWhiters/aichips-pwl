@@ -144,10 +144,9 @@
             border: none;
             box-shadow: none;
         }
-        
-        .card-head {
+        /* .card-head {
             background: linear-gradient(300deg, pink, lightblue);
-        }
+        } */
         
         .content-header h1 {
             font-weight: 700;
@@ -291,10 +290,107 @@
         }
         /* ANTRIAN */
         
-        .card.antrian {
+        .card-head .order-id {
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        .card-head .time {
+            font-size: 16px;
+        }
+        
+        .card-body {
+            padding: 0;
+        }
+        
+        .product-list-order {
+            display: flex;
+            width: 100%;
+        }
+        
+        .product-list-order .product-list-img {
+            margin-right: 12px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .product-list-detail {
+            width: 100%;
+        }
+        
+        .product-list-order .product-list-detail .product-list-name {
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .product-list-order .product-list-detail .product-list-taste {
+            font-weight: 500;
+            font-size: 14px;
+            color: #7f7f7f;
+            margin: 3px 0;
+        }
+        
+        .product-list-order .product-list-detail .product-list-pq {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .product-list-order .product-list-detail .product-list-price {
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .product-list-order .product-list-detail .product-list-qty {
+            font-weight: 600;
+            margin: 0;
+            align-items: flex-end;
+        }
+        
+        .product-list-order-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .product-list-total {
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .btn-group-list-order button {
+            background-color: transparent;
+            border: none;
+        }
+        
+        .btn-group-list-order button .fa-check {
+            border: 2px solid rgba(0, 128, 0, 0.5);
+            padding: 10px;
+            border-radius: 8px;
+            margin-right: -10px;
+        }
+        
+        .btn-group-list-order button .fa-x {
+            border: 2px solid rgba(255, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 8px;
+            margin-right: -10px;
+        }
+        
+        .btn-group-list-order button .fa-check:hover {
+            background-color: rgba(0, 128, 0, 0.2);
+        }
+        
+        .btn-group-list-order button .fa-x:hover {
+            background-color: rgba(255, 0, 0, 0.2);
+        }
+        /* .card.antrian {
             background: linear-gradient(300deg, pink, lightblue);
             margin-bottom: 5px;
-        }
+        } */
         
         .main-footer {
             background-color: #f7f7f7;
@@ -313,8 +409,8 @@
         
         .table-num {
             font-weight: 600;
-            font-size: 42px;
-            color: #000000;
+            font-size: 34px;
+            color: #646464;
         }
         
         .badge-danger {
@@ -322,7 +418,8 @@
             color: rgb(249, 91, 91);
             padding: 8px 16px;
             border-radius: 20px;
-            box-shadow: 3px 3px 9px #888888;
+            margin-top: 20px;
+            /* box-shadow: 3px 3px 9px #888888; */
         }
         
         .badge-success {

@@ -3,6 +3,8 @@
 body {
     background-color: #f7f7f7;
     font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
 }
 
 
@@ -155,18 +157,20 @@ footer {
     border-radius: 22px 22px 0 0;
     padding-top: 18px;
     margin-top: 50px;
-    position: absolute;
-    left: 0;
-    right: 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    min-height: 100%;
 }
 
 footer .footer-desc {
-    font-size: 1px;
+    font-size: 14px;
     text-align: center;
     display: flex;
     justify-content: center;
-    padding: 0 90px;
+    padding: 10px 100px;
     font-weight: 200;
+    word-spacing: 1px;
 }
 
 footer .btn-group-footer a i {
@@ -180,7 +184,7 @@ footer .btn-group-footer a i:hover {
 }
 
 footer .copyright {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 200;
 }
 

@@ -78,5 +78,5 @@
 
 <?=$this->section('js');?>
 <script src="<?=base_url('plugins/chart.js/Chart.min.js')?>"></script>
-<script src="<?=base_url('js/dashboard.js')?>"></script>
+<script src="<?=base_url('js/dashboard2.js')?>"></script>
 <?=$this->endSection();?>

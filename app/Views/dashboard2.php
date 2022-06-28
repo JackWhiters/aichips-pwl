@@ -255,8 +255,8 @@
 .
         <!-- Footer --> 
         <footer class="text-center">
-                <h3 class="footer-title">Lorem Ipsum</h3>
-                <p class="footer-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum incidunt placeat amet doloremque, distinctio eaque?
+                <h3 class="footer-title">AI Chips</h3>
+                <p class="footer-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum incidunt placeat amet doloremque, distinctio eaque.
                 </p>
                 <div class="btn-group-footer">
                     <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -265,7 +265,7 @@
                     <a href="#"><i class="fa-brands fa-twitter"></i></a>
                 </div>
                 <hr>
-                <p class="copyright"><strong>Copyright © 2021 - 2022 AiChips. All rights reserved.</strong> </p>
+                <p class="copyright"><strong>Copyright © 2021 - 2022 AiChips & Kelompok 22. All rights reserved.</strong> </p>
         </footer>
 
         <script src="<?php echo base_url() ?>   /js/jquery/jquery.min.js"></script>

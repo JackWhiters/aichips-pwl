@@ -2,7 +2,7 @@
 <?php $this->section('content'); ?>
 
 <div class="container-fluid">
-    <button class="btn  mb-1 tambah"><i class="fas fa-plus"></i> Tambah Pelanggan</button>
+    <button class="btn  mb-1 tambah"><i class="fas fa-plus"></i> Tambah Meja</button>
     <div class="card  mb-4">
         <div class="card-body">
             <div class="table-responsive">

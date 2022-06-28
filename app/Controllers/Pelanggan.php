@@ -8,7 +8,7 @@ use Irsyadulibad\DataTables\DataTables;
 class Pelanggan extends BaseController
 {
     protected $pelangganModel;
-    protected $rules = ['pelanggan' => ['rules' => 'required']];
+    protected $rules = ['mja' => ['rules' => 'required']];
 
     public function __construct()
     {
@@ -18,7 +18,7 @@ class Pelanggan extends BaseController
 
     public function index()
     {
-        echo view('pelanggan/index', ['title' => 'Daftar Pelanggan']);
+        echo view('pelanggan/index', ['title' => 'Daftar Meja']);
     }
 
     public function ajax()

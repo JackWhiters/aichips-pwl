@@ -6,6 +6,7 @@ use App\Models\MenuModel;
 use App\Models\AntrianModel;
 use App\Models\TransaksiModel2;
 use App\Models\UserModel2;
+use App\Models\PelangganModel;
 
 class Dashboard2 extends BaseController
 {
@@ -15,6 +16,7 @@ class Dashboard2 extends BaseController
         $this->antrianModel = new AntrianModel();
         $this->transaksiModel = new TransaksiModel2();
         $this->userModel = new UserModel2();
+        $this->pelangganModel = new PelangganModel();
     }
     public function index()
     {
@@ -30,6 +32,8 @@ class Dashboard2 extends BaseController
             "minumanDingin" => $this->menuModel->where(["jenis" => 3, "hapus" => NULL])->findAll(),
             "minumanPanas" => $this->menuModel->where(["jenis" => 4, "hapus" => NULL])->findAll(),
         ];
+
+        $data['dataPelanggan'] = $this->pelangganModel->findAll();
         return view('dashboard2', $data);
     }
 

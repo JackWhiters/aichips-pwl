@@ -12,10 +12,51 @@
             </div>
         
     </div>
-            <div class="col-12">
-            
+    <div class="col-12">
+        <div class="card">
+            <!-- <div class="card-header">
+                    <h2 class="text-center">Daftar Menu</h2>
+                </div> -->
+            <div class="card-body">
+
+                <table class="table">
+                    <thead>
+                        <th>
+                            ID
+                        </th>
+                        <th>
+                            BARCODE
+                        </th>
+                        <th>
+                            NAMA
+                        </th>
+                        <th>
+                            JENIS
+                        </th>
+                        <th>
+                            HARGA
+                        </th>
+                        <th>
+                            STOK
+                        </th>
+                        <th>
+                            STATUS
+                        </th>
+                        <th>
+                            FOTO
+                        </th>
+                        <th>
+                            Hapus
+                        </th>
+                    </thead>
+                    <tbody id="tabelUser">
+                    </tbody>
+                </table>
             </div>
         </div>
+    </div>
+</div>
+</div>
 
 
 <div class="modal fade" id="modalTambah" tabindex="-1" role="dialog">
@@ -136,19 +177,35 @@
                     $('#daftar-menu').append('<div class="col-6 col-md-8 col-lg-4"><div class="card products"><div class="card-head text-center"><img src="images/menu/'+ data[i].foto +'" alt="Image" class="product-img img-fluid"></div><div class="card-body"><div name="product-name-price"><h4 class="product-name">'+ data[i].nama_item +'</h4><h5 class="product-qty float-sm-right">Stok : '+ data[i].stok +'</h5><h4 class="product-price"> <span>Rp.</span>'+ data[i].harga +'</45></div><div class="btn-group-ed"><a href="#" class="btn-secondary yellow" onClick="tryUpload(' + data[i].id + ', \"' + data[i].nama_item + '\" ,\"' + data[i].foto + '\")"><i class="fa-solid fa-pen-to-square"></i>Edit</a> <a href="" class="btn-secondary red"> <i class="fa-solid fa-trash-can"></i> Delete</a></div></div></div> </div>')
 
 
-                    tabel += '<div class="col-6 col-md-8 col-lg-4"><div class="card products"><div class="card-head text-center"><img src="images/menu/'
-                    + data[i].foto +'" alt="Image" class="product-img img-fluid"></div><div class="card-body"><div name="product-name-price"><h4 class="product-name">'
-                    + data[i].nama_item +'</h4><p>'+ data[i].barcode + '</p><h5 class="product-qty float-sm-right">Stok : '
-                    + data[i].stok +'</h5><h4 class="product-price"> <span>Rp.</span>'
-                    + data[i].harga +''
-              
-                    tabel += "</div><div class='btn-group-ed'><a href='#' class='btn-secondary yellow' onClick='tryUpload(" + data[i].id + ", \"" + data[i].nama_item + "\" ,\"" + data[i].foto + "\")'>Edit<i class='mdi mdi-upload'></i></a><a href='#' class='btn-secondary red' id='hapus" + data[i].id + "' onclick='tryHapus(" + data[i].id + ", \"" + data[i].nama_item + "\")' ><i class='mdi mdi-delete'></i > </a></div></div></div> </div>"
+                    tabel += "<tr><td>" + data[i].id + "</td><td>" + data[i].barcode + "</td><td>" + data[i].nama_item + "</td><td>"
+                    if (data[i].jenis == 1) {
+                        tabel += "Makanan"
+                    } else if (data[i].jenis == 2) {
+                        tabel += "Snack"
+                    } else if (data[i].jenis == 3) {
+                        tabel += "Minuman Dingin"
+                    } else {
+                        tabel += "Minuman Panas"
+                    }
+                    tabel += "<td>" + data[i].harga + "</td>" + "<td>" +
+                        data[i].stok + "</td>" + "<td><select class='form-control text-dark' id='status" + data[i].id + "' onChange='ubahStatus(" + data[i].id + ")'>"
+                    if (data[i].status == 0 || data[i].stok == 0) {
+                        tabel += "<option value='0' selected>Habis</option>"
+                        tabel += "<option value='1'>Tersedia</option>"
+                    } else {
+                        tabel += "<option value='0' >Habis</option>"
+                        tabel += "<option value='1' selected>Tersedia</option>"
+                    }
+                    tabel += "</select></td><td><a href='#' onClick='tryUpload(" + data[i].id + ", \"" + data[i].nama_item + "\" ,\"" + data[i].foto + "\")'><i class='mdi mdi-upload'></i></a></td><td><a href='#' id='hapus" + data[i].id + "' onclick='tryHapus(" + data[i].id + ", \"" + data[i].nama_item + "\")' ><i class='mdi mdi-delete'></i > </a></td > < /tr>"
 
                 }
                 if (!tabel) {
                     tabel = '<td class="text-center" colspan="2">Data Masih kosong :)</td>'
                 }
-                $("#daftar-menu").html(tabel)
+                $("#tabelUser").html(tabel)
+
+
+                $(".table").addClass('table-responsive')
             }
         });
     }
