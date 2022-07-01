@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2022 at 06:17 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.11
+-- Waktu pembuatan: 28 Jun 2022 pada 19.03
+-- Versi server: 10.4.24-MariaDB
+-- Versi PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `antrian`
+-- Struktur dari tabel `antrian`
 --
 
 CREATE TABLE `antrian` (
@@ -37,7 +37,7 @@ CREATE TABLE `antrian` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `antrian`
+-- Dumping data untuk tabel `antrian`
 --
 
 INSERT INTO `antrian` (`id`, `nama`, `noMeja`, `tanggal`, `status`, `idUser`) VALUES
@@ -47,12 +47,21 @@ INSERT INTO `antrian` (`id`, `nama`, `noMeja`, `tanggal`, `status`, `idUser`) VA
 (11, 'tes', 12, '2022-01-17 23:36:48', 2, 1),
 (12, 'FIndri', 12, '2022-01-17 23:37:49', 2, 1),
 (13, 'a', 2, '2022-01-17 23:38:51', 2, 3),
-(18, 'Jony', 80, '2022-06-25 13:16:24', 0, 1);
+(18, 'Jony', 80, '2022-06-25 13:16:24', 0, 1),
+(19, 'test', 2, '2022-06-26 22:01:56', 0, 1),
+(20, 'Uww', 1, '2022-06-26 22:43:53', 0, 1),
+(21, 'Mark', 3, '2022-06-27 04:53:13', 0, 1),
+(22, 'Nanaa', 1, '2022-06-27 21:37:38', 0, 1),
+(23, 'Ninii', 2, '2022-06-27 22:09:19', 0, 1),
+(24, 'aw', 3, '2022-06-27 23:49:52', 0, 1),
+(25, 'Medina', 3, '2022-06-28 14:26:00', 0, 1),
+(26, 'Aaa', 1, '2022-06-28 15:41:15', 0, 1),
+(27, 'Sapri', 2, '2022-06-28 21:55:18', 0, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu`
+-- Struktur dari tabel `menu`
 --
 
 CREATE TABLE `menu` (
@@ -68,7 +77,7 @@ CREATE TABLE `menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `menu`
+-- Dumping data untuk tabel `menu`
 --
 
 INSERT INTO `menu` (`id`, `barcode`, `nama`, `jenis`, `harga`, `stok`, `foto`, `status`, `hapus`) VALUES
@@ -77,8 +86,8 @@ INSERT INTO `menu` (`id`, `barcode`, `nama`, `jenis`, `harga`, `stok`, `foto`, `
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `pembelian`
--- (See below for the actual view)
+-- Stand-in struktur untuk tampilan `pembelian`
+-- (Lihat di bawah untuk tampilan aktual)
 --
 CREATE TABLE `pembelian` (
 `idAntrian` int(11)
@@ -103,7 +112,7 @@ CREATE TABLE `pembelian` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_bulan_tahun`
+-- Struktur dari tabel `tb_bulan_tahun`
 --
 
 CREATE TABLE `tb_bulan_tahun` (
@@ -114,7 +123,7 @@ CREATE TABLE `tb_bulan_tahun` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tb_bulan_tahun`
+-- Dumping data untuk tabel `tb_bulan_tahun`
 --
 
 INSERT INTO `tb_bulan_tahun` (`id`, `bulan`, `tahun`, `bln_thn`) VALUES
@@ -254,7 +263,7 @@ INSERT INTO `tb_bulan_tahun` (`id`, `bulan`, `tahun`, `bln_thn`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_menu`
+-- Struktur dari tabel `tb_menu`
 --
 
 CREATE TABLE `tb_menu` (
@@ -273,47 +282,59 @@ CREATE TABLE `tb_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tb_menu`
+-- Dumping data untuk tabel `tb_menu`
 --
 
 INSERT INTO `tb_menu` (`id`, `barcode`, `nama_item`, `harga`, `stok`, `jenis`, `status`, `foto`, `hapus`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'A0001', 'Sarimi Duo', 2500, 4, 0, 0, 'gambar.jpg', '2022-06-24 12:06:00', '2021-10-12 18:32:35', '2022-06-25 23:11:26', '0000-00-00 00:00:00'),
+(1, 'A0001', 'Sarimi Duo', 2500, 1, 0, 0, 'gambar.jpg', '2022-06-24 12:06:00', '2021-10-12 18:32:35', '2022-06-26 10:46:07', '0000-00-00 00:00:00'),
 (5, 'A0005', 'Tolak Angin', 3000, 44, 0, 0, 'gambar.jpg', '2022-06-24 12:06:00', '2021-10-20 21:26:17', '2022-06-25 21:10:28', '0000-00-00 00:00:00'),
 (6, 'A0006', 'Gula Pasir', 10000, 20, 0, 0, 'gambar.jpg', '2022-06-24 12:06:00', '2021-10-20 22:31:17', '2022-06-15 10:17:34', '0000-00-00 00:00:00'),
 (7, 'A0007', 'Sprit', 5000, 20, 0, 0, 'gambar.jpg', '2022-06-24 12:06:00', '2022-01-21 18:57:34', '2022-05-02 22:08:52', '0000-00-00 00:00:00'),
 (12, 'A2222', 'JOHN', 11111, 11, 0, 1, '.png', '2022-06-24 12:06:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (20, 'A3333', 'Test', 25000, 11, 2, 1, '.png', '2022-06-25 12:06:00', '0000-00-00 00:00:00', '2022-06-24 21:44:03', '0000-00-00 00:00:00'),
-(31, 'A444', 'test', 50000, 12, 2, 1, 'test.jpg', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(35, 'A3334', 'kebab', 50000, 14, 3, 1, 'kebab.jpg', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(31, 'A444', 'test', 50000, 12, 2, 1, 'test.jpg', '2022-06-28 12:06:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(35, 'A3334', 'kebab', 50000, 14, 3, 1, 'kebab.jpg', '2022-06-28 12:06:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(36, 'TC001', 'Tahu Crispy', 4000, 93, 2, 1, 'tahucrispy.jpg', NULL, '0000-00-00 00:00:00', '2022-06-28 02:39:31', '0000-00-00 00:00:00'),
+(37, 'SK001', 'Seblak Ai Chips', 10000, 5, 1, 1, 'seblakaichips.jpg', NULL, '0000-00-00 00:00:00', '2022-06-28 02:39:31', '0000-00-00 00:00:00'),
+(40, 'JC01', 'Jamur Crispy', 4000, 50, 2, 1, 'jamurcrispy.jpg', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(41, 'KK01', 'Kentang Crispy', 6000, 49, 2, 1, 'kentangcrispy.jpg', NULL, '0000-00-00 00:00:00', '2022-06-28 02:39:31', '0000-00-00 00:00:00'),
+(42, 'SC01', 'Sosis Crispy', 6000, 50, 2, 1, 'sosiscrispy.jpg', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(43, 'KC01', 'Kulit Crispy', 6000, 50, 2, 1, 'kulitcrispy.jpg', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(44, 'UC01', 'Usus Crispy', 6000, 50, 2, 1, 'ususcrispy.jpg', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(45, 'BC01', 'Bakso Crispy', 7000, 40, 2, 1, 'baksocrispy.jpg', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(46, 'AC01', 'Ayam Crispy', 7000, 40, 2, 1, 'ayamcrispy.jpg', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(47, 'ST01', 'Seblak Topping Ceker / Chikuwa', 13000, 30, 1, 1, 'default.jpg', '2022-06-28 12:06:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(50, 'aa', 'aaa', 2222, 22, 2, 1, 'default.jpg', '2022-06-28 12:06:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(51, 'wqw', 'sss', 234, 22, 1, 1, 'default.jpg', '2022-06-28 12:06:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_pelanggan`
+-- Struktur dari tabel `tb_pelanggan`
 --
 
 CREATE TABLE `tb_pelanggan` (
   `id` int(11) UNSIGNED NOT NULL,
-  `nama_pelanggan` varchar(100) NOT NULL,
-  `jenkel` varchar(1) NOT NULL,
-  `telp_pelanggan` varchar(20) NOT NULL,
-  `alamat_pelanggan` varchar(100) NOT NULL,
+  `nama_pelanggan` varchar(56) NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   `deleted_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tb_pelanggan`
+-- Dumping data untuk tabel `tb_pelanggan`
 --
 
-INSERT INTO `tb_pelanggan` (`id`, `nama_pelanggan`, `jenkel`, `telp_pelanggan`, `alamat_pelanggan`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Umum', '', '-', '-', '2021-10-12 00:00:00', '2022-05-02 21:52:31', '0000-00-00 00:00:00');
+INSERT INTO `tb_pelanggan` (`id`, `nama_pelanggan`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(21, 'Umum', '2022-06-26 13:00:35', '2022-06-26 13:00:43', '0000-00-00 00:00:00'),
+(22, '1', '2022-06-26 13:00:47', '2022-06-26 13:00:47', '0000-00-00 00:00:00'),
+(39, '2', '2022-06-26 08:50:07', '2022-06-26 08:50:07', '2022-06-26 08:50:07'),
+(45, '3', '2022-06-27 01:15:23', '2022-06-27 01:15:23', '2022-06-27 01:15:23');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_pemasok`
+-- Struktur dari tabel `tb_pemasok`
 --
 
 CREATE TABLE `tb_pemasok` (
@@ -328,7 +349,7 @@ CREATE TABLE `tb_pemasok` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tb_pemasok`
+-- Dumping data untuk tabel `tb_pemasok`
 --
 
 INSERT INTO `tb_pemasok` (`id`, `nama_pemasok`, `telp_pemasok`, `alamat_pemasok`, `keterangan`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -339,7 +360,7 @@ INSERT INTO `tb_pemasok` (`id`, `nama_pemasok`, `telp_pemasok`, `alamat_pemasok`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_pengaturan`
+-- Struktur dari tabel `tb_pengaturan`
 --
 
 CREATE TABLE `tb_pengaturan` (
@@ -349,7 +370,7 @@ CREATE TABLE `tb_pengaturan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tb_pengaturan`
+-- Dumping data untuk tabel `tb_pengaturan`
 --
 
 INSERT INTO `tb_pengaturan` (`nama_toko`, `no_telp`, `alamat`) VALUES
@@ -363,7 +384,7 @@ INSERT INTO `tb_pengaturan` (`nama_toko`, `no_telp`, `alamat`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_penjualan`
+-- Struktur dari tabel `tb_penjualan`
 --
 
 CREATE TABLE `tb_penjualan` (
@@ -387,28 +408,19 @@ CREATE TABLE `tb_penjualan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tb_penjualan`
+-- Dumping data untuk tabel `tb_penjualan`
 --
 
 INSERT INTO `tb_penjualan` (`id`, `invoice`, `id_pelanggan`, `total_harga`, `diskon`, `total_akhir`, `tunai`, `kembalian`, `catatan`, `tanggal`, `id_user`, `status`, `no_pesan`, `ip_address`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'INV2206150001', 1, 100000, 0, 100000, 100000, 0, '', '2022-06-15', 20, 0, 0, '::1', '2022-06-15 10:17:34', '2022-06-15 10:17:34', '0000-00-00 00:00:00'),
-(5, 'INV2206240001', 1, 100000, 0, 100000, 188888, 88888, 'Test', '2022-06-24', 20, 0, 0, '::1', '2022-06-24 16:59:17', '2022-06-24 16:59:17', '0000-00-00 00:00:00'),
-(6, 'INV2206240002', 1, 50000, 0, 50000, 111111, 61111, '11', '2022-06-24', 20, 0, 0, '::1', '2022-06-24 17:05:30', '2022-06-24 17:05:30', '0000-00-00 00:00:00'),
-(7, 'INV2206240003', 1, 50000, 0, 50000, 111111, 61111, '', '2022-06-24', 20, 0, 0, '::1', '2022-06-24 17:13:37', '2022-06-24 17:13:37', '0000-00-00 00:00:00'),
-(10, 'INV2206240004', 1, 27500, 0, 27500, 111111, 83611, '', '2022-06-24', 20, 0, 0, '::1', '2022-06-24 19:46:42', '2022-06-24 19:46:42', '0000-00-00 00:00:00'),
-(11, 'INV2206240005', 1, 25000, 0, 25000, 100000, 75000, 'AAA', '2022-06-24', 20, 0, 0, '::1', '2022-06-24 21:44:02', '2022-06-24 21:44:02', '0000-00-00 00:00:00'),
-(17, 'INV2206250001', 1, 2500, 0, 2500, 11111, 8611, '1', '2022-06-25', 20, 0, 0, '::1', '2022-06-25 18:15:41', '2022-06-25 18:15:41', '0000-00-00 00:00:00'),
-(21, 'INV2206250002', 1, 22500, 0, 22500, 111111, 88611, '', '2022-06-25', 20, 0, 17, '::1', '2022-06-25 20:54:53', '2022-06-25 20:54:53', '0000-00-00 00:00:00'),
-(26, 'INV2206250003', 1, 12500, 0, 12500, 111111, 98611, '', '2022-06-25', 20, 0, 0, '::1', '2022-06-25 21:04:20', '2022-06-25 21:04:20', '0000-00-00 00:00:00'),
-(27, 'INV2206250004', 1, 8000, 0, 8000, 11111, 3111, '', '2022-06-25', 20, 0, 18, '::1', '2022-06-25 21:10:28', '2022-06-25 21:10:28', '0000-00-00 00:00:00'),
-(28, 'INV2206250005', 1, 7500, 0, 7500, 11111, 3611, '', '2022-06-25', 20, 0, 18, '::1', '2022-06-25 21:15:16', '2022-06-25 21:15:16', '0000-00-00 00:00:00'),
-(40, 'INV2206250006', 1, 15000, 0, 15000, 111111, 96111, '', '2022-06-25', 20, 0, 18, '::1', '2022-06-25 22:16:44', '2022-06-25 22:16:44', '0000-00-00 00:00:00'),
-(41, 'INV2206250007', 1, 30000, 0, 30000, 111111, 81111, '', '2022-06-25', 20, 0, 0, '::1', '2022-06-25 23:11:26', '2022-06-25 23:11:26', '0000-00-00 00:00:00');
+(43, 'INV2206260001', 21, 30000, 0, 30000, 32000, 2000, '', '2022-06-26', 20, 0, 0, '::1', '2022-06-26 10:42:07', '2022-06-26 10:42:07', '0000-00-00 00:00:00'),
+(44, 'INV2206260002', 21, 23000, 0, 23000, 25000, 2000, 'fdf', '2022-06-26', 20, 0, 0, '::1', '2022-06-26 10:46:07', '2022-06-26 10:46:07', '0000-00-00 00:00:00'),
+(45, 'INV2206260003', 21, 12000, 0, 12000, 15000, 3000, '', '2022-06-26', 20, 0, 3, '::1', '2022-06-26 16:55:20', '2022-06-26 16:55:20', '0000-00-00 00:00:00'),
+(46, 'INV2206280001', 45, 24000, 0, 24000, 50000, 26000, 'bda', '2022-06-28', 20, 0, 0, '::1', '2022-06-28 02:39:31', '2022-06-28 02:39:31', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_roles`
+-- Struktur dari tabel `tb_roles`
 --
 
 CREATE TABLE `tb_roles` (
@@ -417,7 +429,7 @@ CREATE TABLE `tb_roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tb_roles`
+-- Dumping data untuk tabel `tb_roles`
 --
 
 INSERT INTO `tb_roles` (`id`, `keterangan`) VALUES
@@ -428,7 +440,7 @@ INSERT INTO `tb_roles` (`id`, `keterangan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_stok`
+-- Struktur dari tabel `tb_stok`
 --
 
 CREATE TABLE `tb_stok` (
@@ -446,7 +458,7 @@ CREATE TABLE `tb_stok` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tb_stok`
+-- Dumping data untuk tabel `tb_stok`
 --
 
 INSERT INTO `tb_stok` (`id_stok`, `tipe`, `id_item`, `id_pemasok`, `jumlah`, `keterangan`, `id_user`, `ip_address`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -458,7 +470,7 @@ INSERT INTO `tb_stok` (`id_stok`, `tipe`, `id_item`, `id_pemasok`, `jumlah`, `ke
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_transaksi`
+-- Struktur dari tabel `tb_transaksi`
 --
 
 CREATE TABLE `tb_transaksi` (
@@ -477,24 +489,23 @@ CREATE TABLE `tb_transaksi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tb_transaksi`
+-- Dumping data untuk tabel `tb_transaksi`
 --
 
 INSERT INTO `tb_transaksi` (`id_transaksi`, `id_penjualan`, `id_item`, `harga_item`, `jumlah_item`, `diskon_item`, `no_pesan`, `subtotal`, `ip_address`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(7, 11, 20, 25000, 1, 0, 0, 25000, '::1', '2022-06-24 21:44:03', '2022-06-24 21:44:03', '0000-00-00 00:00:00'),
-(8, 17, 1, 2500, 1, 0, 0, 2500, '::1', '2022-06-25 18:15:41', '2022-06-25 18:15:41', '0000-00-00 00:00:00'),
-(9, 21, 1, 2500, 9, 0, 0, 22500, '::1', '2022-06-25 20:54:56', '2022-06-25 20:54:56', '0000-00-00 00:00:00'),
-(10, 26, 1, 2500, 5, 0, 0, 12500, '::1', '2022-06-25 21:04:20', '2022-06-25 21:04:20', '0000-00-00 00:00:00'),
-(11, 27, 1, 2500, 2, 0, 0, 5000, '::1', '2022-06-25 21:10:28', '2022-06-25 21:10:28', '0000-00-00 00:00:00'),
-(12, 27, 5, 3000, 1, 0, 0, 3000, '::1', '2022-06-25 21:10:28', '2022-06-25 21:10:28', '0000-00-00 00:00:00'),
-(13, 28, 1, 2500, 3, 0, 0, 7500, '::1', '2022-06-25 21:15:17', '2022-06-25 21:15:17', '0000-00-00 00:00:00'),
-(14, 40, 1, 2500, 6, 0, 18, 15000, '::1', '2022-06-25 22:16:44', '2022-06-25 22:16:44', '0000-00-00 00:00:00'),
-(15, 41, 1, 2500, 12, 0, 0, 30000, '::1', '2022-06-25 23:11:26', '2022-06-25 23:11:26', '0000-00-00 00:00:00');
+(17, 43, 37, 10000, 3, 0, 0, 30000, '::1', '2022-06-26 10:42:07', '2022-06-26 10:42:07', '0000-00-00 00:00:00'),
+(18, 44, 37, 10000, 1, 0, 0, 10000, '::1', '2022-06-26 10:46:07', '2022-06-26 10:46:07', '0000-00-00 00:00:00'),
+(19, 44, 1, 2500, 2, 0, 0, 5000, '::1', '2022-06-26 10:46:07', '2022-06-26 10:46:07', '0000-00-00 00:00:00'),
+(20, 44, 36, 4000, 2, 0, 0, 8000, '::1', '2022-06-26 10:46:07', '2022-06-26 10:46:07', '0000-00-00 00:00:00'),
+(21, 45, 36, 4000, 3, 0, 3, 12000, '::1', '2022-06-26 16:55:20', '2022-06-26 16:55:20', '0000-00-00 00:00:00'),
+(22, 46, 37, 10000, 1, 0, 0, 10000, '::1', '2022-06-28 02:39:31', '2022-06-28 02:39:31', '0000-00-00 00:00:00'),
+(23, 46, 36, 4000, 2, 0, 0, 8000, '::1', '2022-06-28 02:39:31', '2022-06-28 02:39:31', '0000-00-00 00:00:00'),
+(24, 46, 41, 6000, 1, 0, 0, 6000, '::1', '2022-06-28 02:39:31', '2022-06-28 02:39:31', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_unit`
+-- Struktur dari tabel `tb_unit`
 --
 
 CREATE TABLE `tb_unit` (
@@ -506,7 +517,7 @@ CREATE TABLE `tb_unit` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tb_unit`
+-- Dumping data untuk tabel `tb_unit`
 --
 
 INSERT INTO `tb_unit` (`id`, `nama_unit`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -520,7 +531,7 @@ INSERT INTO `tb_unit` (`id`, `nama_unit`, `created_at`, `updated_at`, `deleted_a
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_users`
+-- Struktur dari tabel `tb_users`
 --
 
 CREATE TABLE `tb_users` (
@@ -541,19 +552,21 @@ CREATE TABLE `tb_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tb_users`
+-- Dumping data untuk tabel `tb_users`
 --
 
 INSERT INTO `tb_users` (`id`, `email`, `username`, `password`, `nama`, `alamat`, `id_role`, `avatar`, `status`, `token`, `ip_address`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'afterdusk55@gmail.com', 'superadmin', 'admin', 'Super Admin', 'Bandung', 1, 'avatar.jpg', 1, '35083a6ee73d98bd1e535b752c335979562481afed79ae2e627f2deba1c61005', '0.0.0.0', '2021-10-12 18:29:41', '2022-06-15 09:49:17', NULL),
 (2, 'admin@gmail.com', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Administrator', 'Boyolali', 2, 'avatar.jpg', 1, 'bdbc976f1212965d03dcce1fecbcc811d3c817b7efd1aa61c090b5d7913b895f', '0.0.0.0', '2021-10-12 18:29:41', '2022-05-02 21:00:03', NULL),
 (3, 'kasir@gmail.com', 'kasir', '$2y$10$eEd2VoX5fOImeW0t20ojpuReyDOwN0i3iFbd9YPaPPCQVqGmjwYeC', 'Kasir', 'Bandung', 3, 'avatar.jpg', 1, NULL, '0.0.0.0', '2021-10-12 18:29:41', '2022-05-02 21:00:08', NULL),
-(20, 'superadmin@gmail.com', 'superadmin1', '$2y$10$Mr2UTVmTnbh5RIt5KPTxYODuhcQgPMikJCRPfsXyGV4w9W7N.8tW.', 'Pemilik', 'Jl.bintara Raya\r\n', 1, 'avatar.jpg', 0, 'ea540a9b4c399334a7329457cfda9fd17d1cbdf6bea7ad44ceba6bebce932bfe', '::1', '2022-06-15 10:13:27', '2022-06-15 10:13:27', NULL);
+(20, 'superadmin@gmail.com', 'superadmin1', '$2y$10$Mr2UTVmTnbh5RIt5KPTxYODuhcQgPMikJCRPfsXyGV4w9W7N.8tW.', 'Pemilik', 'Jl.bintara Raya\r\n', 1, 'avatar.jpg', 0, 'ea540a9b4c399334a7329457cfda9fd17d1cbdf6bea7ad44ceba6bebce932bfe', '::1', '2022-06-15 10:13:27', '2022-06-15 10:13:27', NULL),
+(21, 'herna@gmail.com', 'herna', '$2y$10$uj8i8CgdkIQ0PTHqn0e/xeXzfiZKKe4pWqrdRdZJwUzzUn8A2G2A2', 'Herna', 'Bogor', 3, 'avatar.jpg', 0, '3cefa77c79fcaa975354673d28329c8e98f02576fe1069cda76b44e2606cd6a1', '::1', '2022-06-26 02:09:39', '2022-06-26 02:09:39', NULL),
+(22, 'admin1@gmail.com', 'admin1', '$2y$10$BI.SgAInC.zSQ6pfkzMiPukMl91sUj1ohI/znmWPFqKZtVytIOY1m', 'Admin', 'Gatau', 2, 'avatar.jpg', 0, 'c7d19b9ddc385a323ff58ace03803ca4ff9b17dad5c1de08e9001e2e9ce09a4f', '::1', '2022-06-28 03:22:54', '2022-06-28 03:22:54', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transaksi`
+-- Struktur dari tabel `transaksi`
 --
 
 CREATE TABLE `transaksi` (
@@ -564,7 +577,7 @@ CREATE TABLE `transaksi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `transaksi`
+-- Dumping data untuk tabel `transaksi`
 --
 
 INSERT INTO `transaksi` (`id`, `idMenu`, `jumlah`, `idAntrian`) VALUES
@@ -594,12 +607,28 @@ INSERT INTO `transaksi` (`id`, `idMenu`, `jumlah`, `idAntrian`) VALUES
 (24, 1, 4, 20),
 (25, 6, 1, 20),
 (26, 7, 1, 20),
-(27, 20, 1, 18);
+(27, 20, 1, 18),
+(28, 37, 1, 19),
+(29, 36, 1, 19),
+(30, 31, 1, 20),
+(31, 36, 1, 20),
+(32, 37, 1, 20),
+(33, 36, 3, 21),
+(34, 37, 1, 22),
+(35, 36, 1, 23),
+(36, 41, 2, 24),
+(37, 36, 1, 25),
+(38, 41, 1, 25),
+(39, 37, 1, 25),
+(40, 36, 1, 26),
+(41, 40, 2, 27),
+(42, 41, 1, 27),
+(43, 37, 1, 27);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -611,7 +640,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id`, `nama`, `password`, `rule`, `hapus`) VALUES
@@ -623,56 +652,56 @@ INSERT INTO `user` (`id`, `nama`, `password`, `rule`, `hapus`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure for view `pembelian`
+-- Struktur untuk view `pembelian`
 --
 DROP TABLE IF EXISTS `pembelian`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `pembelian`  AS SELECT `antrian`.`id` AS `idAntrian`, `antrian`.`nama` AS `namaAntrian`, `antrian`.`noMeja` AS `noMeja`, `antrian`.`status` AS `statusAntrian`, `antrian`.`tanggal` AS `tanggal`, `menu`.`id` AS `idMenu`, `menu`.`foto` AS `foto`, `menu`.`hapus` AS `hapus`, `menu`.`harga` AS `harga`, `menu`.`jenis` AS `jenis`, `menu`.`nama` AS `namaMenu`, `menu`.`status` AS `statusMenu`, `transaksi`.`id` AS `idTransaksi`, `transaksi`.`jumlah` AS `jumlah`, `user`.`id` AS `idUser`, `user`.`nama` AS `namaUser`, `user`.`rule` AS `rule` FROM (((`antrian` join `transaksi` on(`antrian`.`id` = `transaksi`.`idAntrian`)) join `menu` on(`transaksi`.`idMenu` = `menu`.`id`)) join `user` on(`antrian`.`idUser` = `user`.`id`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `pembelian`  AS SELECT `antrian`.`id` AS `idAntrian`, `antrian`.`nama` AS `namaAntrian`, `antrian`.`noMeja` AS `noMeja`, `antrian`.`status` AS `statusAntrian`, `antrian`.`tanggal` AS `tanggal`, `menu`.`id` AS `idMenu`, `menu`.`foto` AS `foto`, `menu`.`hapus` AS `hapus`, `menu`.`harga` AS `harga`, `menu`.`jenis` AS `jenis`, `menu`.`nama` AS `namaMenu`, `menu`.`status` AS `statusMenu`, `transaksi`.`id` AS `idTransaksi`, `transaksi`.`jumlah` AS `jumlah`, `user`.`id` AS `idUser`, `user`.`nama` AS `namaUser`, `user`.`rule` AS `rule` FROM (((`antrian` join `transaksi` on(`antrian`.`id` = `transaksi`.`idAntrian`)) join `menu` on(`transaksi`.`idMenu` = `menu`.`id`)) join `user` on(`antrian`.`idUser` = `user`.`id`))  ;
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `antrian`
+-- Indeks untuk tabel `antrian`
 --
 ALTER TABLE `antrian`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idUser` (`idUser`);
 
 --
--- Indexes for table `menu`
+-- Indeks untuk tabel `menu`
 --
 ALTER TABLE `menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tb_bulan_tahun`
+-- Indeks untuk tabel `tb_bulan_tahun`
 --
 ALTER TABLE `tb_bulan_tahun`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tb_menu`
+-- Indeks untuk tabel `tb_menu`
 --
 ALTER TABLE `tb_menu`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `barcode` (`barcode`);
 
 --
--- Indexes for table `tb_pelanggan`
+-- Indeks untuk tabel `tb_pelanggan`
 --
 ALTER TABLE `tb_pelanggan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tb_pemasok`
+-- Indeks untuk tabel `tb_pemasok`
 --
 ALTER TABLE `tb_pemasok`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tb_penjualan`
+-- Indeks untuk tabel `tb_penjualan`
 --
 ALTER TABLE `tb_penjualan`
   ADD PRIMARY KEY (`id`),
@@ -680,13 +709,13 @@ ALTER TABLE `tb_penjualan`
   ADD KEY `id_pelanggan_id_user` (`id_pelanggan`,`id_user`);
 
 --
--- Indexes for table `tb_roles`
+-- Indeks untuk tabel `tb_roles`
 --
 ALTER TABLE `tb_roles`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tb_stok`
+-- Indeks untuk tabel `tb_stok`
 --
 ALTER TABLE `tb_stok`
   ADD PRIMARY KEY (`id_stok`),
@@ -695,7 +724,7 @@ ALTER TABLE `tb_stok`
   ADD KEY `id_item_id_pemasok_id_user` (`id_item`,`id_pemasok`,`id_user`);
 
 --
--- Indexes for table `tb_transaksi`
+-- Indeks untuk tabel `tb_transaksi`
 --
 ALTER TABLE `tb_transaksi`
   ADD PRIMARY KEY (`id_transaksi`),
@@ -703,13 +732,13 @@ ALTER TABLE `tb_transaksi`
   ADD KEY `id_penjualan_id_item` (`id_penjualan`,`id_item`);
 
 --
--- Indexes for table `tb_unit`
+-- Indeks untuk tabel `tb_unit`
 --
 ALTER TABLE `tb_unit`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tb_users`
+-- Indeks untuk tabel `tb_users`
 --
 ALTER TABLE `tb_users`
   ADD PRIMARY KEY (`id`),
@@ -717,7 +746,7 @@ ALTER TABLE `tb_users`
   ADD KEY `id_role` (`id_role`);
 
 --
--- Indexes for table `transaksi`
+-- Indeks untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`id`),
@@ -725,118 +754,118 @@ ALTER TABLE `transaksi`
   ADD KEY `idAntrian` (`idAntrian`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `antrian`
+-- AUTO_INCREMENT untuk tabel `antrian`
 --
 ALTER TABLE `antrian`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
--- AUTO_INCREMENT for table `menu`
+-- AUTO_INCREMENT untuk tabel `menu`
 --
 ALTER TABLE `menu`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
--- AUTO_INCREMENT for table `tb_bulan_tahun`
+-- AUTO_INCREMENT untuk tabel `tb_bulan_tahun`
 --
 ALTER TABLE `tb_bulan_tahun`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
 
 --
--- AUTO_INCREMENT for table `tb_menu`
+-- AUTO_INCREMENT untuk tabel `tb_menu`
 --
 ALTER TABLE `tb_menu`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
--- AUTO_INCREMENT for table `tb_pelanggan`
+-- AUTO_INCREMENT untuk tabel `tb_pelanggan`
 --
 ALTER TABLE `tb_pelanggan`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
--- AUTO_INCREMENT for table `tb_pemasok`
+-- AUTO_INCREMENT untuk tabel `tb_pemasok`
 --
 ALTER TABLE `tb_pemasok`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `tb_penjualan`
+-- AUTO_INCREMENT untuk tabel `tb_penjualan`
 --
 ALTER TABLE `tb_penjualan`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
--- AUTO_INCREMENT for table `tb_roles`
+-- AUTO_INCREMENT untuk tabel `tb_roles`
 --
 ALTER TABLE `tb_roles`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `tb_stok`
+-- AUTO_INCREMENT untuk tabel `tb_stok`
 --
 ALTER TABLE `tb_stok`
   MODIFY `id_stok` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `tb_transaksi`
+-- AUTO_INCREMENT untuk tabel `tb_transaksi`
 --
 ALTER TABLE `tb_transaksi`
-  MODIFY `id_transaksi` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_transaksi` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT for table `tb_unit`
+-- AUTO_INCREMENT untuk tabel `tb_unit`
 --
 ALTER TABLE `tb_unit`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `tb_users`
+-- AUTO_INCREMENT untuk tabel `tb_users`
 --
 ALTER TABLE `tb_users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
--- AUTO_INCREMENT for table `transaksi`
+-- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `antrian`
+-- Ketidakleluasaan untuk tabel `antrian`
 --
 ALTER TABLE `antrian`
   ADD CONSTRAINT `antrian_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `user` (`id`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `tb_penjualan`
+-- Ketidakleluasaan untuk tabel `tb_penjualan`
 --
 ALTER TABLE `tb_penjualan`
   ADD CONSTRAINT `tb_penjualan_id_pelanggan_foreign` FOREIGN KEY (`id_pelanggan`) REFERENCES `tb_pelanggan` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `tb_penjualan_id_user_foreign` FOREIGN KEY (`id_user`) REFERENCES `tb_users` (`id`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `tb_stok`
+-- Ketidakleluasaan untuk tabel `tb_stok`
 --
 ALTER TABLE `tb_stok`
   ADD CONSTRAINT `tb_stok_id_item_foreign` FOREIGN KEY (`id_item`) REFERENCES `tb_menu` (`id`) ON UPDATE CASCADE,
@@ -844,14 +873,14 @@ ALTER TABLE `tb_stok`
   ADD CONSTRAINT `tb_stok_id_user_foreign` FOREIGN KEY (`id_user`) REFERENCES `tb_users` (`id`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `tb_transaksi`
+-- Ketidakleluasaan untuk tabel `tb_transaksi`
 --
 ALTER TABLE `tb_transaksi`
   ADD CONSTRAINT `tb_transaksi_id_item_foreign` FOREIGN KEY (`id_item`) REFERENCES `tb_menu` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `tb_transaksi_id_penjualan_foreign` FOREIGN KEY (`id_penjualan`) REFERENCES `tb_penjualan` (`id`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `tb_users`
+-- Ketidakleluasaan untuk tabel `tb_users`
 --
 ALTER TABLE `tb_users`
   ADD CONSTRAINT `tb_users_id_role_foreign` FOREIGN KEY (`id_role`) REFERENCES `tb_roles` (`id`) ON UPDATE CASCADE;

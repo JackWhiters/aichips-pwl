@@ -137,8 +137,8 @@
                 },
                 {
                     render: function(data, type, row) {
-                        let html = `<button class="btn btn-success btn-sm mr-1 edit" data-id="${row.id}" data-nama="${row.nama}" data-username="${row.username}" data-email="${row.email}" data-alamat="${row.alamat}" data-role="${row.role}"><i class="fas fa-edit"></i></button>`;
-                        html += `<button class="btn btn-danger btn-sm hapus" data-id="${row.id}"><i class="fas fa-trash"></i></button>`;
+                        let html = `<button class="btn btn-success btn-sm mr-1 edit" data-id="${row.id}" data-nama="${row.nama}" data-username="${row.username}" data-email="${row.email}" data-alamat="${row.alamat}" data-role="${row.role}"><i class="fi fi-rr-edit"></i></button>`;
+                        html += `<button class="btn btn-danger btn-sm hapus" data-id="${row.id}"><i class="fi fi-rr-trash"></i></button>`;
                         return html;
                     }
                 }

@@ -77,8 +77,8 @@
                 },
                 {
                     data: function(row) {
-                        let html = '<button class="btn btn-success btn-sm mr-1 edit" data-id="' + row.id + '" data-pelanggan="' + row.pelanggan + '"><i class="fas fa-edit"></i></button>';
-                        html += '<button class="btn btn-danger btn-sm hapus" data-id="' + row.id + '"><i class="fa fa-trash"></i></button>'
+                        let html = '<button class="btn btn-success btn-sm mr-1 edit" data-id="' + row.id + '" data-pelanggan="' + row.pelanggan + '"><i class="fi fi-rr-edit"></i></button>';
+                        html += '<button class="btn btn-danger btn-sm hapus" data-id="' + row.id + '"><i class="fi fi-rr-trash"></i></button>'
                         return html;
                     }
                 }

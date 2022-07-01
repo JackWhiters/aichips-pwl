@@ -142,7 +142,7 @@
                     + data[i].stok +'</h5><h4 class="product-price"> <span>Rp.</span>'
                     + data[i].harga +''
               
-                    tabel += "</div><div class='btn-group-ed'><a href='#' class='btn-secondary yellow' onClick='tryUpload(" + data[i].id + ", \"" + data[i].nama_item + "\" ,\"" + data[i].foto + "\")'>Edit<i class='mdi mdi-upload'></i></a><a href='#' class='btn-secondary red' id='hapus" + data[i].id + "' onclick='tryHapus(" + data[i].id + ", \"" + data[i].nama_item + "\")' ><i class='mdi mdi-delete'></i > </a></div></div></div> </div>"
+                    tabel += "</div><div class='btn-group-ed'><a href='#' class='btn-secondary yellow' onClick='tryUpload(" + data[i].id + ", \"" + data[i].nama_item + "\" ,\"" + data[i].foto + "\")'><i class='fi fi-rr-upload'></i></a><a href='#' class='btn-secondary red' id='hapus" + data[i].id + "' onclick='tryHapus(" + data[i].id + ", \"" + data[i].nama_item + "\")' ><i class='fi fi-rr-trash'></i> </a></div></div></div> </div>"
 
                 }
                 if (!tabel) {

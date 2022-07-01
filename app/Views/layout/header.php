@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="<?= base_url() ?>/vendors/ti-icons/css/themify-icons.css">
     <link rel="stylesheet" href="<?= base_url() ?>/vendors/typicons/typicons.css">
     <link rel="stylesheet" href="<?= base_url() ?>/vendors/simple-line-icons/css/simple-line-icons.css">
-
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     
     <!-- endinject -->
     <!-- Plugin css for this page -->
