@@ -13,14 +13,13 @@
     <link rel="stylesheet" href="<?= base_url('plugins/sweetalert2/bootstrap-4.min.css') ?>">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url('dist/css/adminlte.min.css') ?>">
-    <link rel="stylesheet" href="<?= base_url('css/style.css') ?>">
+    <link rel="stylesheet" href="<?= base_url() ?>\assets\css\styles2.css">
 </head>
 
-<body class="hold-transition login-page">
-    <div class="login-box">
+<body >
         <div id="base-url" data-url="<?= base_url(); ?>"></div>
         <?= $this->renderSection('auth'); ?>
-    </div>
+    
     <!-- /.login-box -->
     <!-- jQuery -->
     <script src="<?= base_url('plugins/jquery/jquery.min.js') ?>"></script>

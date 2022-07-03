@@ -33,7 +33,10 @@
 <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-flex align-items-top flex-row">
             <div class="container-fluid">
-                <a class="navbar-brand " href="<?php echo base_url().'customer/index'?>"><img src="<?= base_url('uploads/profile/aichips_logos.png') ?>" alt="" class="navbar-img-logo">
+                <!-- <a class="navbar-brand " href="<?php echo base_url().'customer/index'?>"><img src="<?= base_url('uploads/profile/aichips_logos.png') ?>" alt="" class="navbar-img-logo">
+                </a> -->
+                <a href="javascript:void(0)" class="brand-link text-center">
+                AI <span>CHIPS</span>    
                 </a>
         
            <div class="d-flex align-items-top">
