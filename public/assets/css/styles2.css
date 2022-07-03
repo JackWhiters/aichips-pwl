@@ -312,6 +312,12 @@
             top: 30px;
             right: -30px;
         }
+        .nav-item span {
+            display: none;
+        }
+        .navbar-nav .nav-item {
+            width: 120px;
+        }
         .heroes p {
             margin: 0 25px;
         }

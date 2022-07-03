@@ -36,17 +36,18 @@
                 <!-- <a class="navbar-brand " href="<?php echo base_url().'customer/index'?>"><img src="<?= base_url('uploads/profile/aichips_logos.png') ?>" alt="" class="navbar-img-logo">
                 </a> -->
                 <a href="javascript:void(0)" class="brand-link text-center">
-                AI <span>CHIPS</span>    
+                <img src="<?= base_url('/images/auth/ai-chips-logo.png') ?>" class="img-fluid" width="140px" alt="">
+   
                 </a>
         
            <div class="d-flex align-items-top">
                 <ul class="navbar-nav ms-auto">
 
                     <li class="nav-item">
-                         <button type="button" class="btn btn-social-icon-text btn-warning desktop" onclick="bukaModalKeranjang()"><i class="fa-solid fa-bag-shopping"></i>Keranjang<b id="jmlPesanan">(0)</b></button>
+                         <button type="button" class="btn btn-social-icon-text btn-warning desktop" onclick="bukaModalKeranjang()"><i class="fa-solid fa-bag-shopping"></i><span>Keranjang</span><b id="jmlPesanan">(0)</b></button>
                     </li>
                     <li class="nav-item">
-                         <button type="button" class="btn btn-social-icon-text btn-google desktop" onclick="bukaModalLogin()"><i class="mdi mdi-account-check"></i>Pegawai</button>
+                         <button type="button" class="btn btn-social-icon-text btn-google desktop" onclick="bukaModalLogin()"><i class="mdi mdi-account-check"></i><span>Pegawai</span></button>
                     </li>
                 </ul>
             </div>
