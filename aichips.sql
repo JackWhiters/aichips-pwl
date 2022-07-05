@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2022 at 06:17 PM
+-- Generation Time: Jul 05, 2022 at 09:14 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -41,13 +41,8 @@ CREATE TABLE `antrian` (
 --
 
 INSERT INTO `antrian` (`id`, `nama`, `noMeja`, `tanggal`, `status`, `idUser`) VALUES
-(8, 'mhm', 12, '2022-01-17 23:26:22', 2, 3),
-(9, 'tes aja', 1, '2022-01-17 23:28:18', 2, 3),
-(10, 'hehe', 23, '2022-01-17 23:29:23', 2, 1),
-(11, 'tes', 12, '2022-01-17 23:36:48', 2, 1),
-(12, 'FIndri', 12, '2022-01-17 23:37:49', 2, 1),
-(13, 'a', 2, '2022-01-17 23:38:51', 2, 3),
-(18, 'Jony', 80, '2022-06-25 13:16:24', 0, 1);
+(20, '12', 33, '2022-06-27 22:17:19', 0, 1),
+(21, '12', 18, '2022-06-27 22:54:07', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -277,14 +272,14 @@ CREATE TABLE `tb_menu` (
 --
 
 INSERT INTO `tb_menu` (`id`, `barcode`, `nama_item`, `harga`, `stok`, `jenis`, `status`, `foto`, `hapus`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'A0001', 'Sarimi Duo', 2500, 4, 0, 0, 'gambar.jpg', '2022-06-24 12:06:00', '2021-10-12 18:32:35', '2022-06-25 23:11:26', '0000-00-00 00:00:00'),
+(1, 'A0001', 'Sarimi Duo', 2500, 2, 0, 0, 'gambar.jpg', '2022-06-24 12:06:00', '2021-10-12 18:32:35', '2022-06-26 20:35:00', '0000-00-00 00:00:00'),
 (5, 'A0005', 'Tolak Angin', 3000, 44, 0, 0, 'gambar.jpg', '2022-06-24 12:06:00', '2021-10-20 21:26:17', '2022-06-25 21:10:28', '0000-00-00 00:00:00'),
 (6, 'A0006', 'Gula Pasir', 10000, 20, 0, 0, 'gambar.jpg', '2022-06-24 12:06:00', '2021-10-20 22:31:17', '2022-06-15 10:17:34', '0000-00-00 00:00:00'),
 (7, 'A0007', 'Sprit', 5000, 20, 0, 0, 'gambar.jpg', '2022-06-24 12:06:00', '2022-01-21 18:57:34', '2022-05-02 22:08:52', '0000-00-00 00:00:00'),
-(12, 'A2222', 'JOHN', 11111, 11, 0, 1, '.png', '2022-06-24 12:06:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(20, 'A3333', 'Test', 25000, 11, 2, 1, '.png', '2022-06-25 12:06:00', '0000-00-00 00:00:00', '2022-06-24 21:44:03', '0000-00-00 00:00:00'),
-(31, 'A444', 'test', 50000, 12, 2, 1, 'test.jpg', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(35, 'A3334', 'kebab', 50000, 14, 3, 1, 'kebab.jpg', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(64, 'A333', 'Jono', 50000, 12, 3, 1, 'default.jpg', '2022-06-27 12:06:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(68, 'A33', 'Jundi', 50000, 122, 2, 1, 'jundi.jpg', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(91, 'A5235', 'Steven', 50000, 14, 2, 1, 'steven.jpg', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(92, 'A31313', '4444', 50000, 12, 2, 1, 'default.jpg', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -294,10 +289,7 @@ INSERT INTO `tb_menu` (`id`, `barcode`, `nama_item`, `harga`, `stok`, `jenis`, `
 
 CREATE TABLE `tb_pelanggan` (
   `id` int(11) UNSIGNED NOT NULL,
-  `nama_pelanggan` varchar(100) NOT NULL,
-  `jenkel` varchar(1) NOT NULL,
-  `telp_pelanggan` varchar(20) NOT NULL,
-  `alamat_pelanggan` varchar(100) NOT NULL,
+  `nama_pelanggan` varchar(56) NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   `deleted_at` datetime NOT NULL
@@ -307,8 +299,8 @@ CREATE TABLE `tb_pelanggan` (
 -- Dumping data for table `tb_pelanggan`
 --
 
-INSERT INTO `tb_pelanggan` (`id`, `nama_pelanggan`, `jenkel`, `telp_pelanggan`, `alamat_pelanggan`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Umum', '', '-', '-', '2021-10-12 00:00:00', '2022-05-02 21:52:31', '0000-00-00 00:00:00');
+INSERT INTO `tb_pelanggan` (`id`, `nama_pelanggan`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(21, 'Umum', '2022-06-26 13:00:35', '2022-06-26 13:00:43', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -386,25 +378,6 @@ CREATE TABLE `tb_penjualan` (
   `deleted_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `tb_penjualan`
---
-
-INSERT INTO `tb_penjualan` (`id`, `invoice`, `id_pelanggan`, `total_harga`, `diskon`, `total_akhir`, `tunai`, `kembalian`, `catatan`, `tanggal`, `id_user`, `status`, `no_pesan`, `ip_address`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'INV2206150001', 1, 100000, 0, 100000, 100000, 0, '', '2022-06-15', 20, 0, 0, '::1', '2022-06-15 10:17:34', '2022-06-15 10:17:34', '0000-00-00 00:00:00'),
-(5, 'INV2206240001', 1, 100000, 0, 100000, 188888, 88888, 'Test', '2022-06-24', 20, 0, 0, '::1', '2022-06-24 16:59:17', '2022-06-24 16:59:17', '0000-00-00 00:00:00'),
-(6, 'INV2206240002', 1, 50000, 0, 50000, 111111, 61111, '11', '2022-06-24', 20, 0, 0, '::1', '2022-06-24 17:05:30', '2022-06-24 17:05:30', '0000-00-00 00:00:00'),
-(7, 'INV2206240003', 1, 50000, 0, 50000, 111111, 61111, '', '2022-06-24', 20, 0, 0, '::1', '2022-06-24 17:13:37', '2022-06-24 17:13:37', '0000-00-00 00:00:00'),
-(10, 'INV2206240004', 1, 27500, 0, 27500, 111111, 83611, '', '2022-06-24', 20, 0, 0, '::1', '2022-06-24 19:46:42', '2022-06-24 19:46:42', '0000-00-00 00:00:00'),
-(11, 'INV2206240005', 1, 25000, 0, 25000, 100000, 75000, 'AAA', '2022-06-24', 20, 0, 0, '::1', '2022-06-24 21:44:02', '2022-06-24 21:44:02', '0000-00-00 00:00:00'),
-(17, 'INV2206250001', 1, 2500, 0, 2500, 11111, 8611, '1', '2022-06-25', 20, 0, 0, '::1', '2022-06-25 18:15:41', '2022-06-25 18:15:41', '0000-00-00 00:00:00'),
-(21, 'INV2206250002', 1, 22500, 0, 22500, 111111, 88611, '', '2022-06-25', 20, 0, 17, '::1', '2022-06-25 20:54:53', '2022-06-25 20:54:53', '0000-00-00 00:00:00'),
-(26, 'INV2206250003', 1, 12500, 0, 12500, 111111, 98611, '', '2022-06-25', 20, 0, 0, '::1', '2022-06-25 21:04:20', '2022-06-25 21:04:20', '0000-00-00 00:00:00'),
-(27, 'INV2206250004', 1, 8000, 0, 8000, 11111, 3111, '', '2022-06-25', 20, 0, 18, '::1', '2022-06-25 21:10:28', '2022-06-25 21:10:28', '0000-00-00 00:00:00'),
-(28, 'INV2206250005', 1, 7500, 0, 7500, 11111, 3611, '', '2022-06-25', 20, 0, 18, '::1', '2022-06-25 21:15:16', '2022-06-25 21:15:16', '0000-00-00 00:00:00'),
-(40, 'INV2206250006', 1, 15000, 0, 15000, 111111, 96111, '', '2022-06-25', 20, 0, 18, '::1', '2022-06-25 22:16:44', '2022-06-25 22:16:44', '0000-00-00 00:00:00'),
-(41, 'INV2206250007', 1, 30000, 0, 30000, 111111, 81111, '', '2022-06-25', 20, 0, 0, '::1', '2022-06-25 23:11:26', '2022-06-25 23:11:26', '0000-00-00 00:00:00');
-
 -- --------------------------------------------------------
 
 --
@@ -421,8 +394,8 @@ CREATE TABLE `tb_roles` (
 --
 
 INSERT INTO `tb_roles` (`id`, `keterangan`) VALUES
-(1, 'Super Admin'),
-(2, 'Administrator'),
+(1, 'Pemilik'),
+(2, 'administator'),
 (3, 'Kasir');
 
 -- --------------------------------------------------------
@@ -475,21 +448,6 @@ CREATE TABLE `tb_transaksi` (
   `updated_at` datetime NOT NULL,
   `deleted_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `tb_transaksi`
---
-
-INSERT INTO `tb_transaksi` (`id_transaksi`, `id_penjualan`, `id_item`, `harga_item`, `jumlah_item`, `diskon_item`, `no_pesan`, `subtotal`, `ip_address`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(7, 11, 20, 25000, 1, 0, 0, 25000, '::1', '2022-06-24 21:44:03', '2022-06-24 21:44:03', '0000-00-00 00:00:00'),
-(8, 17, 1, 2500, 1, 0, 0, 2500, '::1', '2022-06-25 18:15:41', '2022-06-25 18:15:41', '0000-00-00 00:00:00'),
-(9, 21, 1, 2500, 9, 0, 0, 22500, '::1', '2022-06-25 20:54:56', '2022-06-25 20:54:56', '0000-00-00 00:00:00'),
-(10, 26, 1, 2500, 5, 0, 0, 12500, '::1', '2022-06-25 21:04:20', '2022-06-25 21:04:20', '0000-00-00 00:00:00'),
-(11, 27, 1, 2500, 2, 0, 0, 5000, '::1', '2022-06-25 21:10:28', '2022-06-25 21:10:28', '0000-00-00 00:00:00'),
-(12, 27, 5, 3000, 1, 0, 0, 3000, '::1', '2022-06-25 21:10:28', '2022-06-25 21:10:28', '0000-00-00 00:00:00'),
-(13, 28, 1, 2500, 3, 0, 0, 7500, '::1', '2022-06-25 21:15:17', '2022-06-25 21:15:17', '0000-00-00 00:00:00'),
-(14, 40, 1, 2500, 6, 0, 18, 15000, '::1', '2022-06-25 22:16:44', '2022-06-25 22:16:44', '0000-00-00 00:00:00'),
-(15, 41, 1, 2500, 12, 0, 0, 30000, '::1', '2022-06-25 23:11:26', '2022-06-25 23:11:26', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -546,9 +504,8 @@ CREATE TABLE `tb_users` (
 
 INSERT INTO `tb_users` (`id`, `email`, `username`, `password`, `nama`, `alamat`, `id_role`, `avatar`, `status`, `token`, `ip_address`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'afterdusk55@gmail.com', 'superadmin', 'admin', 'Super Admin', 'Bandung', 1, 'avatar.jpg', 1, '35083a6ee73d98bd1e535b752c335979562481afed79ae2e627f2deba1c61005', '0.0.0.0', '2021-10-12 18:29:41', '2022-06-15 09:49:17', NULL),
-(2, 'admin@gmail.com', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Administrator', 'Boyolali', 2, 'avatar.jpg', 1, 'bdbc976f1212965d03dcce1fecbcc811d3c817b7efd1aa61c090b5d7913b895f', '0.0.0.0', '2021-10-12 18:29:41', '2022-05-02 21:00:03', NULL),
-(3, 'kasir@gmail.com', 'kasir', '$2y$10$eEd2VoX5fOImeW0t20ojpuReyDOwN0i3iFbd9YPaPPCQVqGmjwYeC', 'Kasir', 'Bandung', 3, 'avatar.jpg', 1, NULL, '0.0.0.0', '2021-10-12 18:29:41', '2022-05-02 21:00:08', NULL),
-(20, 'superadmin@gmail.com', 'superadmin1', '$2y$10$Mr2UTVmTnbh5RIt5KPTxYODuhcQgPMikJCRPfsXyGV4w9W7N.8tW.', 'Pemilik', 'Jl.bintara Raya\r\n', 1, 'avatar.jpg', 0, 'ea540a9b4c399334a7329457cfda9fd17d1cbdf6bea7ad44ceba6bebce932bfe', '::1', '2022-06-15 10:13:27', '2022-06-15 10:13:27', NULL);
+(20, 'superadmin@gmail.com', 'superadmin1', '$2y$10$Mr2UTVmTnbh5RIt5KPTxYODuhcQgPMikJCRPfsXyGV4w9W7N.8tW.', 'Pemilik', 'Jl.bintara Raya\r\n', 1, 'avatar.jpg', 0, 'ea540a9b4c399334a7329457cfda9fd17d1cbdf6bea7ad44ceba6bebce932bfe', '::1', '2022-06-15 10:13:27', '2022-06-15 10:13:27', NULL),
+(22, 'admin@gmail.com', 'test', '$2y$10$FkHOwblEeUkesTGAPcu0ZeXdLOexkGm53Ae.qhAOAR1mcROvqjuKy', 'Test', '3', 2, 'avatar.jpg', 0, '8ce8496ddb6847c2d406d2a0bb93bbe11e3623b88ba1399d438b0fc77f8b38d6', '::1', '2022-07-05 14:02:38', '2022-07-05 14:02:38', NULL);
 
 -- --------------------------------------------------------
 
@@ -594,7 +551,10 @@ INSERT INTO `transaksi` (`id`, `idMenu`, `jumlah`, `idAntrian`) VALUES
 (24, 1, 4, 20),
 (25, 6, 1, 20),
 (26, 7, 1, 20),
-(27, 20, 1, 18);
+(27, 20, 1, 18),
+(28, 31, 1, 19),
+(29, 68, 2, 20),
+(30, 68, 1, 21);
 
 -- --------------------------------------------------------
 
@@ -738,7 +698,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `antrian`
 --
 ALTER TABLE `antrian`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `menu`
@@ -756,13 +716,13 @@ ALTER TABLE `tb_bulan_tahun`
 -- AUTO_INCREMENT for table `tb_menu`
 --
 ALTER TABLE `tb_menu`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT for table `tb_pelanggan`
 --
 ALTER TABLE `tb_pelanggan`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `tb_pemasok`
@@ -774,13 +734,13 @@ ALTER TABLE `tb_pemasok`
 -- AUTO_INCREMENT for table `tb_penjualan`
 --
 ALTER TABLE `tb_penjualan`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `tb_roles`
 --
 ALTER TABLE `tb_roles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `tb_stok`
@@ -792,7 +752,7 @@ ALTER TABLE `tb_stok`
 -- AUTO_INCREMENT for table `tb_transaksi`
 --
 ALTER TABLE `tb_transaksi`
-  MODIFY `id_transaksi` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_transaksi` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `tb_unit`
@@ -804,13 +764,13 @@ ALTER TABLE `tb_unit`
 -- AUTO_INCREMENT for table `tb_users`
 --
 ALTER TABLE `tb_users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `user`

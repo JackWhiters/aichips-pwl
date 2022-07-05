@@ -131,25 +131,25 @@
                 if (data.length) {
                     for (let i = 0; i < data.length; i++) {
                        
-                        isiPesanan += '<div class="card col-12 col-md-8 col-lg-4"><div class="card-head"><h5 class="order-id">Order#'+ data[i].id +'</h5><h4 class="table-num float-sm-right">'+ data[i].noMeja +'</h4><p class="">'+ data[i].nama +'</p></div><div class="card-body">'
-                        if (data[i].status == 0) {
-                            isiPesanan += "<label class='badge badge-danger mt-2'>Belum Bayar"
-                        } else {
-                            isiPesanan += "<label class='badge badge-success mt-2'>Selesai"
-                        }
-                        isiPesanan += "</label><div class='product-list-order'><img src='assets/images/seblak1.jpg' alt='' class='product-list-img'><div class='product-list-detail'><p class='product-list-name'>Seblak Ai Chips</p> <p class='product-list-taste'>Level 3</p><div class='product-list-pq'><p class='product-list-price'>14.000</p><p class='product-list-qty'>Qty : 1</p></div></div></div><hr> <div class='product-list-order-bottom'> <p class='product-list-total'>14.000</p><div class='btn-group-list-order'><button><i class='fa-solid fa-check' style='color: green'></i></button><button><i class='fa-solid fa-x' style='color: red'></i></button></div></div></div> </div>"
-
-                        // isiPesanan += '<div class="col-6 col-md-8 col-lg-4"><div class="card antrian mb-3"><div class="card-body"><div name="product-name-price"><span class="order-num mb-2"> Order#'
-                        // + data[i].id +'</span><h4 class="table-num float-sm-right">'
-                        // + data[i].noMeja +'</h4><h4 class="product-name mb-2">'
-                        // + data[i].nama +'</h4></div>'
-
-                        //  if (data[i].status == 0) {
+                        // isiPesanan += '<div class="card col-12 col-md-8 col-lg-4"><div class="card-head"><h5 class="order-id">Order#'+ data[i].id +'</h5><h4 class="table-num float-sm-right">'+ data[i].noMeja +'</h4><p class="">'+ data[i].nama +'</p></div><div class="card-body">'
+                        // if (data[i].status == 0) {
                         //     isiPesanan += "<label class='badge badge-danger mt-2'>Belum Bayar"
                         // } else {
                         //     isiPesanan += "<label class='badge badge-success mt-2'>Selesai"
                         // }
-                        // isiPesanan += "</label><div class='btn-group-ed'><button href='#' class='btn-secondary yellow' onClick='modalRincian(" + data[i].id + ", \"" + data[i].nama + "\", " + data[i].noMeja + "," + data[i].status + ")'>Lihat Rincian <i class='mdi mdi-format-list-bulleted-type'></i><i class='mdi mdi-food-fork-drink'></i></button></div></div></div></div>"
+                        // isiPesanan += "</label><div class='product-list-order'><img src='assets/images/seblak1.jpg' alt='' class='product-list-img'><div class='product-list-detail'><p class='product-list-name'>Seblak Ai Chips</p> <p class='product-list-taste'>Level 3</p><div class='product-list-pq'><p class='product-list-price'>14.000</p><p class='product-list-qty'>Qty : 1</p></div></div></div><hr> <div class='product-list-order-bottom'> <p class='product-list-total'>14.000</p><div class='btn-group-list-order'><button><i class='fa-solid fa-check' style='color: green'></i></button><button><i class='fa-solid fa-x' style='color: red'></i></button></div></div></div> </div>"
+
+                        isiPesanan += '<div class="col-6 col-md-8 col-lg-4"><div class="card antrian mb-3"><div class="card-body"><div name="product-name-price"><span class="order-num mb-2"> Order#'
+                        + data[i].id +'</span><h4 class="table-num float-sm-right">'
+                        + data[i].noMeja +'</h4><h4 class="product-name mb-2">'
+                        + data[i].nama +'</h4></div>'
+
+                         if (data[i].status == 0) {
+                            isiPesanan += "<label class='badge badge-danger mt-2'>Belum Bayar"
+                        } else {
+                            isiPesanan += "<label class='badge badge-success mt-2'>Selesai"
+                        }
+                        isiPesanan += "</label><div class='btn-group-ed'><button href='#' class='btn-secondary yellow' onClick='modalRincian(" + data[i].id + ", \"" + data[i].nama + "\", " + data[i].noMeja + "," + data[i].status + ")'>Lihat Rincian <i class='mdi mdi-format-list-bulleted-type'></i><i class='mdi mdi-food-fork-drink'></i></button></div></div></div></div>"
                     }
                 } else {
                     isiPesanan = "<td colspan='4'>Antrian Masih Kosong :)</td>"

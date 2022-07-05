@@ -27,23 +27,28 @@
     <link rel="stylesheet" href="<?= base_url() ?>\assets\css\styles2.css">
 
 
-    <link rel="shortcut icon" href="<?= base_url('/images/favicon.png') ?>" />
+    <link rel="shortcut icon" href="<?= base_url('/images/default2.png') ?>" />
 </head>
 
 <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-flex align-items-top flex-row">
             <div class="container-fluid">
-                <a class="navbar-brand " href="<?php echo base_url().'customer/index'?>"><img src="<?= base_url('uploads/profile/aichips_logos.png') ?>" alt="" class="navbar-img-logo">
+                <!-- <a class="navbar-brand " href="<?php echo base_url().'customer/index'?>"><img src="<?= base_url('uploads/profile/aichips_logos.png') ?>" alt="" class="navbar-img-logo">
+                </a> -->
+                <!-- <a href="javascript:void(0)" class="brand-link text-center"> -->
+                <a href="<?= base_url('auth') ?>" class="brand-link text-center">
+                <img src="<?= base_url('/images/auth/ai-chips-logo.png') ?>" class="img-fluid" width="140px" alt="">
+   
                 </a>
         
            <div class="d-flex align-items-top">
                 <ul class="navbar-nav ms-auto">
 
                     <li class="nav-item">
-                         <button type="button" class="btn btn-social-icon-text btn-warning desktop" onclick="bukaModalKeranjang()"><i class="fa-solid fa-bag-shopping"></i>Keranjang<b id="jmlPesanan">(0)</b></button>
+                         <button type="button" class="btn btn-social-icon-text btn-warning desktop" onclick="bukaModalKeranjang()"><i class="fa-solid fa-bag-shopping"></i><span>Keranjang</span><b id="jmlPesanan">(0)</b></button>
                     </li>
                     <li class="nav-item">
-                         <button type="button" class="btn btn-social-icon-text btn-google desktop" onclick="bukaModalLogin()"><i class="mdi mdi-account-check"></i>Pegawai</button>
+                         <button type="button" class="btn btn-social-icon-text btn-google desktop" onclick="bukaModalLogin()"><i class="mdi mdi-account-check"></i><span>Pegawai</span></button>
                     </li>
                 </ul>
             </div>
@@ -256,7 +261,7 @@
         <!-- Footer --> 
         <footer class="text-center">
                 <h3 class="footer-title">AI Chips</h3>
-                <p class="footer-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum incidunt placeat amet doloremque, distinctio eaque.
+                <p class="footer-desc">Toko Chips Renyah di malang jawa timur
                 </p>
                 <div class="btn-group-footer">
                     <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -265,7 +270,7 @@
                     <a href="#"><i class="fa-brands fa-twitter"></i></a>
                 </div>
                 <hr>
-                <p class="copyright"><strong>Copyright © 2021 - 2022 AiChips & Kelompok 22. All rights reserved.</strong> </p>
+                <p class="copyright"><strong>Copyright © 2022 - 2023 AiChips & Kelompok 22. All rights reserved.</strong> </p>
         </footer>
 
         <script src="<?php echo base_url() ?>   /js/jquery/jquery.min.js"></script>

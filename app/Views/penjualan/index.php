@@ -49,10 +49,21 @@
                         <div class="col-sm-9">
                             <div class="input-group">
                                 <input type="hidden" id="iditem">
-                                <input type="hidden" id="nama">
                                 <input type="hidden" id="harga">
                                 <input type="hidden" id="stok">
                                 <input type="text" class="form-control mr-2" id="barcode" name="barcode" placeholder="Input barcode" autofocus autocomplete="off">
+                                <span class="text-muted" id="tampil-stok"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="name" class="col-sm-3 col-form-label">Nama</label>
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <input type="hidden" id="iditem">
+                                <input type="hidden" id="harga">
+                                <input type="hidden" id="stok">
+                                <input type="text" class="form-control mr-2" id="nama" name="nama" placeholder="" autofocus autocomplete="off" disabled>
                                 <span class="text-muted" id="tampil-stok"></span>
                             </div>
                         </div>

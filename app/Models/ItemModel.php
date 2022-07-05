@@ -25,6 +25,18 @@ class ItemModel extends Model
         }
     }
 
+        public function detailnama($id = null)
+    {
+        $builder = $this->builder($this->table)->select('tb_menu.id AS iditem, barcode, nama_item, harga, stok, foto');
+        if (empty($id)) {
+            return $builder->get()->getResult(); // tampilkan semua data
+        } else {
+            // tampilkan data sesuai id/barcode
+            return $builder->where('tb_menu.id', $id)->orWhere('nama_item', $id)->get(1)->getRow();
+        }
+    }
+    
+
     public function barcodeModel($keyword)
     {
         $builder = $this->builder($this->table);
@@ -32,6 +44,15 @@ class ItemModel extends Model
         return $builder->get()->getResultArray();
     }
 
+
+        public function nameModel($keyword)
+    {
+        $builder = $this->builder($this->table);
+        $builder->select('nama_item')->Like('nama_item', $keyword);
+        return $builder->get()->getResultArray();
+    }
+
+    
     public function cariProduk($keyword)
     {
         $builder = $this->builder($this->table);

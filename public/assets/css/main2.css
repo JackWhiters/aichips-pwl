@@ -1,3 +1,4 @@
+        @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Lobster+Two:wght@400;700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
         body {
             background-color: #f7f7f7;
@@ -12,6 +13,39 @@
         .main-sidebar {
             background-color: #fff;
         }
+        
+        .brand-link {
+            font-family: 'Creepster';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 64px;
+            line-height: 75px;
+            /* identical to box height */
+            background: linear-gradient(180deg, #FF8787 0%, #B42020 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            /* text-fill-color: transparent; */
+            height: auto;
+            margin-top: 20px;
+            background-color: #f7f7f7;
+        }
+        
+        .brand-link span {
+            background: linear-gradient(180deg, #FFF387 0%, #C11818 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            /* text-fill-color: transparent; */
+        }
+        
+        .layout-navbar-fixed.sidebar-mini.sidebar-collapse .wrapper .brand-link {
+            height: auto;
+            margin-left: 5px;
+        }
+        /* .layout-navbar-fixed.sidebar-mini.sidebar-collapse .wrapper .brand-link span {
+        display: none;
+    } */
         
         nav ul {
             display: flex;
