@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="<?= base_url() ?>\assets\css\main2.css">
     <link rel="stylesheet" href="<?= base_url() ?>\assets\fontawesome\css\all.min.css">
     <!-- endinject -->
-    <link rel="shortcut icon" href="<?= base_url() ?>/images/favicon.png" />
+    <link rel="shortcut icon" href="<?= base_url() ?>/images/default2.png" />
 
     <script src="<?php echo base_url() ?>/js/jquery/jquery.min.js"></script> -->
 

@@ -101,7 +101,7 @@
         background-color: #E66B41;
         color: #f7f7f7;
         font-weight: 500;
-        transition: all 0.3s;
+        transition: all 0.5s;
     }
     
     .btn-login:hover {
@@ -114,7 +114,7 @@
         padding: 8px;
         color: #E66B41;
         font-weight: 500;
-        transition: all 0.3s;
+        transition: all 0.4s;
     }
     
     .btn-login-secondary:hover {
@@ -130,12 +130,11 @@
         color: #444;
         font-size: 16px;
         font-weight: 500;
-        transition: all 0.3s;
+        transition: all 0.5s;
     }
     
     .login-container a:hover {
         color: #222;
-        font-weight: 600;
     }
     /* End of Login */
     /* INDEX */
@@ -235,7 +234,7 @@
     
     .card-body .btn-add:hover {
         background-color: #f0d227;
-        transition: all 0.4s;
+        transition: all 0.5s;
     }
     
     .btn-add span {
@@ -283,19 +282,19 @@
     
     @media(max-width: 2000px) {
         .login-container {
-            padding: 100px 100px 0;
+            padding: 100px 200px 0;
         }
     }
     
     @media(max-width: 1315px) {
         .login-container {
-            padding: 100px 100px 0;
+            padding: 100px 120px 0;
         }
     }
     
     @media(max-width: 992px) {
         .login-container {
-            padding: 100px 100px 0;
+            padding: 100px 140px 0;
         }
         .image-container {
             display: none;
@@ -345,6 +344,6 @@
             box-shadow: 2px 2px 8px #d4d4d4;
         }
         .login-container {
-            padding: 50px;
+            padding: 70px;
         }
     }

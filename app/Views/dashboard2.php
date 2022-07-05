@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="<?= base_url() ?>\assets\css\styles2.css">
 
 
-    <link rel="shortcut icon" href="<?= base_url('/images/favicon.png') ?>" />
+    <link rel="shortcut icon" href="<?= base_url('/images/default2.png') ?>" />
 </head>
 
 <body>
@@ -35,7 +35,8 @@
             <div class="container-fluid">
                 <!-- <a class="navbar-brand " href="<?php echo base_url().'customer/index'?>"><img src="<?= base_url('uploads/profile/aichips_logos.png') ?>" alt="" class="navbar-img-logo">
                 </a> -->
-                <a href="javascript:void(0)" class="brand-link text-center">
+                <!-- <a href="javascript:void(0)" class="brand-link text-center"> -->
+                <a href="<?= base_url('auth') ?>" class="brand-link text-center">
                 <img src="<?= base_url('/images/auth/ai-chips-logo.png') ?>" class="img-fluid" width="140px" alt="">
    
                 </a>

@@ -5,7 +5,9 @@
         <div class="row login"> 
             <div class="col-lg-7 login-container">
                 <div class="head-title py-4 text-center">
+                    <a href="<?= base_url('') ?>" class="brand-link text-center">
                     <img src="<?= base_url('/images/auth/ai-chips-logo.png') ?>" class="img-fluid" alt="">
+                    </a>
                     <h2 class="mt-4"><?= esc($title); ?></h2>
                     <p>Silahkan masukkan email yang terdaftar untuk mengubah password.</p>
                 </div>

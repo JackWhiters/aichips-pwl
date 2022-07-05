@@ -13,7 +13,7 @@ class Menu extends BaseController
     }
     public function index()
     {
-         echo view('menu', ['title'    => 'Produk']);
+         echo view('menu', ['title'    => 'Menu']);
     }
     public function muatData()
     {
